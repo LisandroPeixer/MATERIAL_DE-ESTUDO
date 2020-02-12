@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>fOR</title>
+		<meta charset="utf-8">
+	</head>
+		
+	<body>
+		
+		<script>
+
+		//FOR
+			//para variavel 1 igual a 10; até 0; decrementa 1 por vez
+			for (var i = 10; i >= 0; i--) {
+				//escreva i em cada linha
+				document.write(i + '<br/>')
+			}
+		//fim de FOR	
+
+
+		//FORIN - formula para percorrer arranjos 
+			//variavel convidados recebe arranjo() 
+			var convidados = ['antonio', 'bernardo', 'carlos', 'denis', 'everaldo', 'fabio']
+			//mostrar no console o arranjo de convidados
+			console.log(convidados)
+			//para variavel x percorrer os indices do arranjo convidados
+			for(var x in convidados){
+				//escrever no browser os indices percorridos pro x + o arranjo de convidados
+				document.write('indice: ' + x + ' | valor: ' + convidados[x] + '<br/><hr/>')
+			}
+		//fim de FORIN - formula para percorrer arranjos
+		
+
+		//FOREACH - variavel funcionarios recebe arranjo 
+			var funcionarios = ['ana ', 'betina ', 'catia ', 'elena ', 'fernanda ']
+			//mostrar arranjo de funcionarios no console
+			console.log(funcionarios)
+			//para CADA funcionarios usar função com estes parametros
+			funcionarios.forEach(function(valor, indice, array){
+				//escrever no browser parametros da função
+				document.write('indice: ' + indice + ' | valor: ' + valor + '<br/>')
+				//se o parametro valor for igual a 'elena'
+				if(valor == 'elena '){
+					//o parametro array indice receberá 'um novo valor'
+					array[indice] = 'um novo valor '
+				}
+			})	
+			document.write(funcionarios[3])
+			document.write('<br/>' + funcionarios + '<br/>')
+			document.write('<hr/>')
+		//fim de FOREACH - variavel funcionarios recebe arranjo 
+
+
+		//FOREACH - formula para mostrar parametros dos indices (mostra somente numeros)
+			var carros = Array()
+			carros[5] = 'ferrari'
+		    carros['cd'] = 'lamburguini'
+		    carros[-12] = 'paganni'
+		    carros['xr'] = 'mclaren'
+		    carros[22] = 'bugatti'
+		    var car = function(valor, indice, array){
+				document.write('indice: ' + indice + ' | valor: ' + valor + '<br/>')
+		    }
+		    carros.forEach(car)
+		   	document.write('<hr/>')
+		//fim de FOREACH - formula para mostrar parametros dos indices (mostra somente numeros)
+
+		</script>	
+	</body>
+
+</html>

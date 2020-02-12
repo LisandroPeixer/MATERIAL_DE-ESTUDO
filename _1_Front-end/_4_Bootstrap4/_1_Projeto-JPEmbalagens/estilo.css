@@ -1,0 +1,36 @@
+/*BARRA DE NAVEGAÇÃO COM FORMULÁRIO E DROPDOWN*/
+
+
+
+/*CAROUSEL*/
+
+
+
+/*GRID RESPONSIVA COM CARDS*/
+
+
+
+/*RODAPE*/
+footer{
+	padding: 50px;	
+	background: #0B6121;
+	color:#fff;
+}
+footer h4{
+	color: white;
+	text-transform: uppercase;
+}
+footer .navbar-nav a{
+	color: white;
+}
+footer .navbar-nav a:hover{
+	color: #000;
+	text-decoration: none;
+}
+footer ul{
+	list-style: none;
+}
+footer ul li{
+	float: right;
+	margin: 0 10px;
+}

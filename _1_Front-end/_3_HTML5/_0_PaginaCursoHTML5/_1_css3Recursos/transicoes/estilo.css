@@ -1,0 +1,15 @@
+/*transicoes
+https://www.w3schools.com/css/css3_transitions.asp
+*/
+
+#caixaTransicoes{
+	width: 300px;
+	height: 300px;
+	background: orange;
+}
+#caixaTransicoes:hover{
+	width: 400px;
+	background: yellow;
+	transition: width 3s, background 3s;/*controla tempo de transicao*/
+	/*transition: all 3s;*/
+}

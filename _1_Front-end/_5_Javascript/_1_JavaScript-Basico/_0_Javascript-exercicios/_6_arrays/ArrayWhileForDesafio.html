@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>JavaScript</title>
+	<meta charset="utf-8">
+	
+	<script>
+		
+	var lista = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'l']	
+
+
+	//solução com forEach 
+	var fe = function(valor, indice, array){
+		document.write('indice ' + indice + ' valor ' + valor + ' <br/>')
+	}
+	lista.forEach(fe)
+	document.write('<hr/>')
+
+	//solução com for
+	for(var f in lista){
+		document.write('indice ' + f + ' valor ' + lista[f] + '<br/>')
+	}
+	document.write('<hr/>')
+
+	//solução com while "sem indice"
+	var wh = 0
+		while(wh < lista.length){
+			document.write('valor ' + lista[wh] + '<br/>')
+		wh++
+		}
+	
+	document.write('<hr/>')
+	//___________________________________________________________________________
+
+	//tabuada com for
+
+	for(var x=0; x<11; x++){
+		for(var y=0; y<11; y++){
+			document.write(x + ' x ' + y + ' = ' + (x*y) + '<br/>')
+		}
+		document.write('<hr/>')
+	}
+
+
+
+	</script>
+	
+</head>
+
+<body>
+
+	<script></script> 
+	
+</body>
+
+</html>

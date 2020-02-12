@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>JQuery - Seleção de elementos</title>
+	
+	<meta charset="utf-8">
+	<!--<script src="jquery-3.4.1.min.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous">
+	</script>
+
+</head>
+<body>
+
+	<h1>selecionando elementos com jquery</h1>
+
+	<div>
+		<div>div 1</div>
+		<div>div 2</div>
+	</div>
+
+	<ul>
+		<li class="sel1">menu 1 - item 1</li>
+		<li>menu 1 - item 2</li>
+		<li>menu 1 - item 3</li>
+	</ul>
+
+	<ul class="lista2">
+		<li>menu 2 - item 1</li>
+		<li id="sel3">menu 2 - item 2</li>
+		<li>menu 2 - item 3</li>
+	</ul>
+
+	<input class="sel1" type="text" placeholder="campo 1" /><br>
+
+
+	<select>
+		<option>-- selecione uma opcao --</option>
+		<option class="sel1">opcao 1</option>
+		<option id="sel2">opcao 2</option>
+	</select>
+
+	<hr/>
+
+	<img src="carro.jpg"/>
+
+</body>
+
+	<script>
+		//veja no console
+		//selecionando por tag
+		console.log($('h1'))	
+		console.log($('div'))	
+		//por class
+		console.log($('.sel1'))	
+		//por id
+		console.log($('#sel2'))	
+		console.log($('#sel3'))	
+
+		//selecione tambem no console dessa forma
+
+	</script>
+
+</html>

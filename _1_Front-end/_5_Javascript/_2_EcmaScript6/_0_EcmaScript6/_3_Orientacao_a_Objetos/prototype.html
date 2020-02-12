@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - Prototype</title>
+		<meta charset="utf-8">
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+		<script src="babel.min.js"></script>
+		<!--script src="https://unpkg.com/@babel/standalone/babel.min.js"></script-->
+	</head>
+
+	<body>
+		<!--corrigir syntax em: view/syntax/html underscore-->
+		<!--declare o transpilador na tag-->
+		<script type="text/babel">
+			//As 4 formas de criar objetos tem o elemento prototype 
+			//___________________________________________________________________________________________
+			//OBJETO LITERAL:(gera apenas um objeto)
+			console.log('OBJETO LITERAL:(gera apenas um objeto)');
+			let produtoLiteral = {
+				nome: 'celular',
+				descricao: 'Sansung A10',
+				preco: 999,
+				verDetalhes: function(){
+					console.log(`${this.nome} ${this.descricao} por apenas ${this.preco}`)
+				}
+			}
+			console.log(produtoLiteral);
+			//___________________________________________________________________________________________
+			//Construtor de OBJETO LITERAL:(gera varios objetos)
+			console.log('Construtor de OBJETO LITERAL:(gera varios objetos)');
+			let ClienteFactory = function(nome, telefone, email, endereco){
+				//logica para requisiçao http metodo get
+				return {
+					nome,
+					telefone,
+					email,
+					endereco,
+					status(atual){
+						console.log(atual)
+					}	
+				}	
+			}
+			let cliente1 = ClienteFactory('Joao Paulo', '48 99916 9258', 'jp@gmail.com,', 'geral sn SJB');
+			cliente1.status('ativo');
+			console.log(cliente1);
+			//___________________________________________________________________________________________
+			//CLASSE:(cria objetos)
+			console.log('CLASSE:(cria objetos)');
+			class ContaBacaria{
+				constructor(){
+					this.agencia = 1075
+					this.conta = 88136
+					this.saldo = 100
+					this.limite = 600
+				}
+				depositar(valorDeposito){
+					this.saldo += valorDeposito
+				}
+				sacar(valorSaque){
+					this.saldo -= valorSaque
+				}
+				consultarSaldo(){
+					return this.saldo
+				}
+			}
+			let cliente2 = new ContaBacaria()			
+			console.log(cliente2);			
+			//______________________________________________________________________________________
+			//FUNCAO CONSTRUTORA:(cria objetos com encapsulamento 'var')
+			console.log('FUNCAO CONSTRUTORA:(cria objetos com encapsulamento)');
+			let Carro = function(){
+				var velocidadeMaxima = 200//(privado)
+				var kmRodados = 0
+				this.velocidadeAtual = 0//(publico)
+
+				this.acelerar = function(){
+					let velocidade = this.getVelocidadeAtual() + 50
+					if(velocidade > velocidadeMaxima){
+						velocidade = velocidadeMaxima
+					}
+				this.setVelocidadeAtual(velocidade)
+
+				setKmRodados(0.05)
+				console.log(kmRodados)
+				}
+				
+				this.getVelocidadeAtual = function(){
+					return this.velocidadeAtual
+				}
+				
+				this.setVelocidadeAtual = function(velocidadeAtual){
+					this.velocidadeAtual = velocidadeAtual
+				}
+
+				var setKmRodados = function(km){
+				kmRodados += km
+				}
+			}
+			let ferrari = new Carro();
+			console.log(ferrari);
+		</script>
+	</body>
+</html>

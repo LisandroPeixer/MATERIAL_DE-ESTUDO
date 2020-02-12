@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>JQuery</title>
+	
+	<meta charset="utf-8">
+	<!--<script src="jquery-3.4.1.min.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous">
+	</script>
+
+	<script>
+		/*teste estes comandos no console
+		$('#nome').val()	
+		$('#nome').val('wesley e walacce')	
+		$('#origem').val()
+		$('#origem').val('4')
+
+		$('.sexo')
+		$('.sexo:checked')
+		$('.sexo:checked').val()
+
+		$('.interesse')
+		$('.interesse:checked')
+		$('.interesse:checked').val()			
+		
+		$.each($('.interesse:checked'),(indice, valor)=>{
+				console.log(indice, valor)
+			})
+
+		$.each($('.interesse:checked'),(indice, valor)=>{
+				console.log(indice, valor.value)
+			})	
+														*/
+
+
+		$(document).ready(()=>{
+			/*
+			$.each($('.interesse:checked'),(indice, valor)=>{
+				console.log(indice, valor)
+			})
+			*/
+		})
+
+	</script>
+</head>
+<body>
+
+	<p>Nome:</p>
+	<input type="text" id="nome">
+	<br/>
+
+	<p>Onde voce nos encontrou?</p>
+	<select id="origem">
+		<option value="1">Google</option>
+		<option value="2">Facebook</option>
+		<option value="3">Radio</option>
+		<option value="4">Outros meios</option>
+	</select>
+
+	<p>Sexo:</p>
+	<input type="radio" name="sexo" class="sexo" value="f">Feminino<br/>
+	<input type="radio" name="sexo" class="sexo" value="m">Masculino<br/>
+	<br/>
+
+	<p>Interesse:</p>
+	<input type="checkbox" name="interesse" class="interesse" value="php">PHP<br/>
+	<input type="checkbox" name="interesse" class="interesse" value="js">JavaScript<br/>
+	<input type="checkbox" name="interesse" class="interesse" value="angular">Angular<br/>
+	<input type="checkbox" name="interesse" class="interesse" value="nodejs">NodeJS<br/>
+
+</body>
+
+</html>

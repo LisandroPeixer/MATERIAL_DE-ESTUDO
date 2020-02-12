@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Funções-CallBack</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+
+		<script>
+			var resposta = prompt('quantos continentes tem na terra?: ')
+
+			function exibirArtigo(id, callbackSucesso, callbackErro){
+				if(resposta == 5){
+					callbackSucesso('Parabens', 'es um galo')
+				}
+				else{
+					callbackErro('Tente outra vez!!!')
+				}
+			}
+
+			//funções void(sem retorno) 
+			//encapsuladas em variaveis por wrapper
+			var callbackSucesso = function(titulo, descricao){
+				document.write(titulo, '<br/>')
+				document.write(descricao, '<br/>')
+			}
+			var callbackErro = function(mensagem){
+				document.write(mensagem)
+			}
+			exibirArtigo(1, callbackSucesso, callbackErro)//encaminhar sem parenteses para a função (como parametros)
+		</script>
+	</body>
+
+</html>

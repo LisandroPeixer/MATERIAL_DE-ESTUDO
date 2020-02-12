@@ -1,0 +1,107 @@
+//////////logar no git
+git config --list
+git config --global user.name "LisandroPeixer"
+git config --global user.email "lisandropeixer@yahoo.com.br.com"
+
+/////////gerar chave 
+ssh-keygen
+cd ~/.ssh/
+ls
+cat Id_rsa.pub
+copiar e colar em https://github.com/settings/ssh
+_______________________________________________________________
+
+//////////inicia novo repositorio
+git init
+git init --bare
+
+//////////associar local com repositorio rede/local
+git remote add origin https://github.com/LisandroPeixer/meuprojeto.git
+git remote add local ssh://localhost/users/LisandroPeixer/documents/meuprojeto.git
+
+//////////Verificar arquivos
+git status
+
+//////////Listar histórico de commits
+git log --oneline
+
+//////////preparar para adicionar arquivos
+git add .
+
+//////////adicionar arquivos
+git commit -m "Mensagem explicativa"
+git commit -a -m "ou assim adicionando e commitando ao mesmo tempo"
+
+//////////enviar arquivos
+git push -u origin master
+git push local master
+git push
+
+__________________________________________________________
+
+//////////clonar projeto
+git clone https://github.com/LisandroPeixer/meuprojeto.git
+
+git branch -a
+git checkout -b nomeDoBranch origin/nomeDoBranch
+
+//////////sincronizar arquivos
+git pull origin master
+git pull
+______________________________________________________________
+
+//////////Quero desfazer tudo que eu fiz desde o último commit
+git clean -df			 
+git checkout -- .
+		
+//////////remover o último commit, porém mantendo os arquivos do jeito que estão.
+git reset --soft HEAD~1		
+
+//////////remover o último commit, inclusive as alterações nos arquivos.
+git reset --hard HEAD~1		 
+
+//////////navegar entre commits (git checkout e8a52f3)
+git checkout <código do commit>	
+
+//////////para voltar ao último commit faça:
+git checkout master		
+
+//////////Preciso apagar o último commit no Github 
+git push -f origin HEAD^:master	
+
+//////////Quero mudar o meu repositório remoto "origin" 
+git remote set-url origin ttps://github.com/LisandroPeixer/novoprojeto.git 
+__________________________________________________________________________
+
+/////////criar branch
+git checkout -b nomeDoBranch
+git checkout -b nomeDoBranch origin/nomeDoBranch
+
+/////////mostrar branch
+git branch
+git branch -a
+
+/////////mesclar branch com master
+git checkout master
+git merge nomeDoBranch
+
+/////////reorganizando os commits do branch no master(somente local)
+git rebase momeDoBranch
+______________________________________________
+
+/////////contribuir com outros projetos
+no github:
+clicar em 'Fork' no repositorio desejado para clonar para sua conta
+fazer as implementações locais e atualiza-las com o seu repositorio clone
+clicar em 'Pull Request' para enviar as implementações para a conta original
+____________________________________________
+
+//////////versionando projetos (releases)
+git tag 0.1.0
+git tag -l
+git push origin master --tags
+
+//////////VIM(criando arquivos pelo gitbash) 
+touch nomeDoArquivo.estensao
+vim nomeDoArquivo.estensao
+ESC/:q!/ENTER

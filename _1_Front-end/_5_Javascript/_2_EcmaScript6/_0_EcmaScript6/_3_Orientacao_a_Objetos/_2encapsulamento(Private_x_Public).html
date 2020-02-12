@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - Encapsulamento(Private x Public)</title>
+		<meta charset="utf-8">
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+
+	<body>
+		<!--corrigir syntax em: view/syntax/html underscore-->
+		<script type="text/babel">
+			class Tv {
+				constructor(){
+					this._relacaoCanais = Array(2, 4, 5, 7, 10)//this._atributo: acessar via get ou set
+					this._canalAtivo = 5
+					this._volume = 5
+				}
+
+				//getters e setters
+				get canalAtivo() {
+					return this._canalAtivo
+				}
+				
+				set canalAtivo(canal){
+					//se esta relação de canais o indice canal for diferente de -1
+					if(this._relacaoCanais.indexOf(canal) !== -1){
+					//este canal ativo recebe novo canal	
+					this._canalAtivo = canal}
+				}
+			}
+
+			let tv1 = new Tv()
+
+			console.log('o canal ativo é: ', tv1.canalAtivo);
+			tv1.canalAtivo = 4
+			console.log('mudou para: ', tv1.canalAtivo);
+		</script>
+	</body>
+</html>

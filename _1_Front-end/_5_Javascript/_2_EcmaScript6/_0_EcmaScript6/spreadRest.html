@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - Spread/Rest</title>
+		<meta charset="utf-8">
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+		<script src="babel.min.js"></script>
+		<!--script src="https://unpkg.com/@babel/standalone/babel.min.js"></script-->
+	</head>
+
+	<body>
+		<!--corrigir syntax em: view/syntax/html underscore-->
+		<!--declare o transpilador na tag-->		
+		<script type="text/babel">
+
+			//spread strings	espalhar
+			let tituloArtigo = 'operador spread separa strings'
+			console.log(tituloArtigo);
+			console.log(...tituloArtigo);
+			console.log([...tituloArtigo]);
+
+			//spread arrays juntar
+			let volkswagen = ['fusca', 'gol', 'golf', 'tiguan']
+			let fiat = ['147', 'uno', 'kronus', 'toro']
+			let carros = ['ka', 'fiesta', 'onix', ...volkswagen, ...fiat]
+
+			console.log(volkswagen)
+			console.log(fiat)
+			console.log(carros)
+
+			//spread objetos juntar
+			let pessoa = {nome: 'savia', idade: '17'}
+			let clone = {endereco: 'geral sn', ...pessoa }
+
+			console.log(clone)
+
+			//_______________________________________________________________________________________________
+
+			//rest funcoes juntar
+
+			//funcao soma com rest de parametros
+			function soma(...param){
+				//variavel resultado recebe 0
+				let resultado = 0
+				//mostrar o rest de paramentros
+				console.log(param)
+				//percorrer parametros pegando cada valor e aplicar funcao que soma resultado a valor)
+				param.forEach(valor => resultado += valor)
+				//retorna resultado a funcao soma
+				return resultado
+			}
+			//mostra no console a soma dos parametros enviados
+			console.log(soma(1, 2, 3, 4, 5, 6, 7, 8, 9))
+
+			//funcao multiplicacao com parametros multiplicador e rest de denominadores
+			function multiplicacao(multiplicador, ...denominadores){
+				console.log(multiplicador)
+				console.log(denominadores)
+				let resultado = 0
+				//percorrer denominadores pegando cada valor multiplicando pelo multiplicador e somando os resultados
+				denominadores.forEach(valor => resultado += multiplicador * valor)
+				return resultado
+			}
+			//mostra no console a soma dos parametros enviados e multiplicados
+			console.log(multiplicacao(2, 4, 6, 8, 10));
+		</script>
+	</body>
+</html>

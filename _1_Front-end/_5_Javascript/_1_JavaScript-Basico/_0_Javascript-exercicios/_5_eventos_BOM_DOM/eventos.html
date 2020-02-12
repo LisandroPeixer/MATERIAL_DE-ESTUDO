@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EVENTOS</title>
+		<meta charset="utf-8">
+	</head>
+
+	<!--Janela-->
+	<body onresize = "console.log('dispara o evento')" onscroll="console.log('dispara o evento')">
+
+		<aside style="float: right;">
+			<div style="background: #598741; height: 2000px; width: 150px;">Abra o console e role a barra</div><br>
+	    </aside>
+
+
+		<!--formulario-->
+		<input onfocus="console.log('recebeu o foco')" onblur="console.log('perde o foco')" type="text" name="" placeholder="ver no console quando o evento aparece na caixa">
+		<br>
+
+		<select onchange="console.log('Estado foi modificado')">
+			<option>Selecione</option>
+			<option value="1">opção 1</option>
+			<option value="2">opçõa 2</option>
+		</select><br><br>
+
+		<!--teclado-->
+		<input onkeydown="acao()" type="text" name="" placeholder="ao pressionar uma tecla"><br>
+		<input onkeyup="acao()" type="text" name="" placeholder="apos pressionar uma tecla"><br>
+		<!--somente caracteres-->
+		<input onkeypress="acao()" type="text" name="" placeholder="durante o pressionar de uma tecla">
+		<br><br>
+
+		<!--mouse-->
+		<div onclick="acao()" style="background: #ccc; height: 100px; width: 150px">um click</div>
+		<div ondblclick="acao()" style="background: #bbb; height: 100px; width: 150px">dois clicks</div>
+		<div onmouseup ="acao()" style="background: #ddd; height: 100px; width: 150px">soltando o mouse</div>
+		<div onmouseover ="acao()" style="background: #aaa; height: 100px; width: 150px">passando o mouse</div>
+		<div onmouseout ="acao()" style="background: #eee; height: 100px; width: 150px">tirando o mouse</div>
+
+		<script>
+	  		function acao(){
+	  			alert('dispara o evento')
+	  		}
+	  		// mais opções em https://www.w3schools.com/jsref/dom_obj_event.asp
+	  	</script>
+	</body>
+
+</html>

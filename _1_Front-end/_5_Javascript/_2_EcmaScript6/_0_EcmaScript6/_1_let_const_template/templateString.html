@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - TemplateStrings</title>
+		<meta charset="utf-8">
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+
+	<body>
+		<div id="output"></div>
+
+		<!--corrigir syntax em: view/syntax/html underscore-->
+		<script type="text/babel">
+		//ver no console
+		//forma antiga não permitia quebras de linha
+			var nomeAnt = 'ana'
+			console.log('olá ' + nomeAnt + ' tudo bem!!!')
+
+
+		//com template strings use crase para abreFecha com ${} para incluir variaveis e pode quebrar linhas
+			let nome = 'alice'
+			console.log(`olá ${nome} tudo bem!!!`) 	
+			console.log(`chamada
+						 ${nome} 
+						 ${nomeAnt}
+						 presentes`) 	
+
+		//usando em calculos 
+			console.log(`7 + 7 = ${7*7}`)
+
+
+		//usando com funcoes
+			function calcular(x, y){
+				return x * y
+			}			
+			console.log(`A multiplicacao de 8 x 8 é: ${calcular(8, 8)}`);
+		</script>
+	</body>
+</html>

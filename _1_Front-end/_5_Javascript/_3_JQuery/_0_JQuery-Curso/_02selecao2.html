@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>JQuery - navegando com a seleção de elementos</title>
+	
+	<meta charset="utf-8">
+	<!--<script src="jquery-3.4.1.min.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous">
+	</script>
+
+</head>
+<body>
+		<h1>selecionando elementos por tag/classe com jquery</h1>
+
+	<div class="lista1">
+		<input class="ex1" type="text" placeholder="input1" />
+		<input class="ex3" type="text" placeholder="input1" />
+		<input type="text" placeholder="input1" />
+	</div>
+
+	<div class="lista1">
+		<div class="ex1">div 1</div>
+		<div class="ex3">div 2</div>
+		<div>div 3</div>
+	</div>
+
+	<ul class="lista1">
+		<li class="ex1">opcao 1</li>
+		<li class="ex2">opcao 2</li>
+		<li class="ex2">opcao 3</li>
+		<li class="ex2">opcao 4</li>
+		<li class="ex2">opcao 5</li>		
+		<li class="ex3">opcao 6</li>
+	</ul>
+
+	<ul class="lista2">
+		<li class="ex2">opcao 7</li>
+		<li class="ex2">opcao 8</li>
+		<li class="ex2">opcao 9</li>
+		<li class="ex2">opcao 10</li>		
+		<li class="ex3">opcao 11</li>
+		<li class="ex2">opcao 12</li>
+		<li class="ex2">opcao 13</li>
+		<li class="ex2">opcao 14</li>
+	</ul>
+
+</body>
+
+	<script>
+		//veja no console control/shift/i
+		//combinacao de seletores
+		//selecao por classe de tag especifica
+		console.log($('.ex1'))
+		console.log($('input.ex1'))
+		console.log($('div.ex1'))
+		console.log($('li.ex1'))
+
+		//selecao por classe de classe especifica
+		console.log($('.ex2'))
+		console.log($('.lista1 .ex2'))
+		console.log($('.lista2 .ex2'))
+		console.log($('.lista1 .ex3'))
+
+		//selecao por classe e tag de classe especifica
+		console.log($('.lista1 li.ex2'))
+
+		//array de retorno sobre elemento ( :first :even :odd(impares) :last)
+		console.log($('.ex2'))
+		console.log($('.ex2:first'))
+		console.log($('.ex2:even'))
+		console.log($('.ex2:odd'))
+		console.log($('.ex2:last'))
+
+
+	</script>
+
+</html>

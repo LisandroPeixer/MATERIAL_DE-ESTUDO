@@ -1,0 +1,33 @@
+/*modelo de caixa*/
+.interno{
+	border: 1px solid red;
+	background-color: yellow;
+
+	/*padding controla o conteudo da caixa div
+
+	padding: 25px;
+
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;*/
+
+	padding: 30px 60px 90px 120px;
+
+}	
+.externo{
+	border: 1px solid blue;
+	background-color: green;
+
+	/*margin controla o espaçamento entre as caixas div 
+
+	margin: 25px;
+
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;*/
+
+	margin: 120px 90px 60px 30px;
+
+}

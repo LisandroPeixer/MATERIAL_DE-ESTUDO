@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - Prototype Herança</title>
+		<meta charset="utf-8">
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+		<script src="babel.min.js"></script>
+		<!--script src="https://unpkg.com/@babel/standalone/babel.min.js"></script-->
+	</head>
+
+	<body>
+		<!--corrigir syntax em: view/syntax/html underscore-->
+		<!--declare o transpilador na tag-->
+		<script type="text/babel">
+
+			//estes são atributos globais
+			//neste caso veja a heranca ocorrendo de object.prototype para os demais
+			Object.prototype.attr0 = 0 
+			//e neste caso o atributo sendo sobrescrito(polimorfismo)
+			Object.prototype.attr4 = 4
+
+			//estes são objetos literais
+			let primeiro = {attr1: 1}
+			let segundo = {__proto__: primeiro, attr2: 2}
+			let terceiro = {__proto__: segundo, attr3: 3, attr4: 'quatro'}
+
+			console.log(terceiro.attr0, terceiro.attr1, terceiro.attr2, terceiro.attr3, terceiro.attr4);
+		</script>
+	</body>
+</html>

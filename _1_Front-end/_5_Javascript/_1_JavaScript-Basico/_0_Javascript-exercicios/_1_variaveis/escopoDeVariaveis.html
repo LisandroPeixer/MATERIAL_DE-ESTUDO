@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Variaveis - Escopo(onde elas valem?)</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<script>
+			//toda variavel deve ser declarada antes de ser impressa no browser
+
+			//Escopo Global dentro do script
+			//o escopo aceita tudo que estiver 
+			var globall = "Global" 
+
+					//escopo bloco dentro de {comamdos if ou switch}
+					if (true) {
+						var blocoGlobal = "bloco"
+						document.write('dentro do bloco aparece variavel ' + globall + '<br/>')//bloco
+						document.write('<strong>dentro do bloco nao aparece variavel funcao </strong><br/>')//script
+						document.write('dentro do bloco aparece variavel ' + blocoGlobal + '<br/><br/>')//bloco
+					}
+					//fecha bloco
+
+							//escopo funcão dentro da {função}
+							//a função aceita tudo que estiver dentro, fora e antes dela
+							function exibirVarFuncao(){
+								var funcao = 'função'
+
+										//escopo bloco dentro da função
+										if (true) {
+											var blocoNaFuncao = "blocoNaFunção"
+											document.write('dentro do blocoNaFunção aparece variavel ' + globall + '<br/>')//bloco
+											document.write('dentro da blocoNaFunção aparece variavel ' + funcao + '<br/>')//função
+											document.write('dentro do blocoNaFunção aparece variavel ' + blocoGlobal + '<br/>')//bloco
+											document.write('dentro da blocoNaFunção aparece variavel ' + blocoNaFuncao + '<br/><br/>')//função
+										}
+										//fecha bloco
+
+								document.write('dentro da função aparece variavel ' + globall + '<br/>')//função
+								document.write('dentro da função aparece variavel ' + funcao + '<br/>')//função
+								document.write('dentro da função aparece variavel ' + blocoGlobal + '<br/>')//função
+								document.write('dentro da função aparece variavel ' + blocoNaFuncao + '<br/><br/>')//função
+							}
+							exibirVarFuncao()
+							//fecha função
+	
+			document.write('dentro do script aparece variavel ' + globall + '<br/>')//script
+			document.write('dentro do script aparece variavel ' + blocoGlobal + '<br/><br/>')//script
+
+
+			document.write('<strong>dentro do script nao aparece variavel  blocoNaFuncao</strong><br/>')//script
+			document.write('<strong>dentro do script nao aparece variavel funcao</strong><br/>')//script
+
+			//fecha script
+
+		</script>		
+	</body>
+
+</html>

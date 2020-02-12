@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - Orientação a objeto</title>
+		<meta charset="utf-8">
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+
+	<body>
+		<!--corrigir syntax em: view/syntax/html underscore-->
+		<script type="text/babel">
+
+		//ver no console	
+		//modelo de classe orientado a objeto (parece receita de bolo)
+			class ContaBacaria{
+				//RECEITA - Nesta parte são declarados os atributos da classe (o que ela tem)
+				constructor(){
+					this.agencia = 1075
+					this.conta = 88136
+					this.saldo = 100
+					this.limite = 600
+				}
+				//MODO DE PREPARO - Nesta parte são declarados os metodos da classe (o que ela faz)
+				depositar(valorDeposito){
+					this.saldo += valorDeposito
+				}
+				sacar(valorSaque){
+					this.saldo -= valorSaque
+				}
+				consultarSaldo(){
+					return this.saldo
+				}
+			}
+
+			//SABORES DISPONIVEIS - Nesta parte são declarados os objetos originados da classe
+			let cliente1 = new ContaBacaria()
+			let cliente2 = new ContaBacaria()
+
+			//alguns comamdos para movimentar cliente1
+			console.log(cliente1.consultarSaldo());
+			cliente1.depositar(1000);
+			console.log(cliente1.consultarSaldo());
+			cliente1.sacar(700);
+			console.log(cliente1.consultarSaldo());
+
+			//a conta cliente2 não teve alterações 
+			console.log(cliente2.consultarSaldo());
+		</script>
+	</body>
+
+</html>

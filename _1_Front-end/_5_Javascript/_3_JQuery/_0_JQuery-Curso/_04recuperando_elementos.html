@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>JQuery</title>
+	
+	<meta charset="utf-8">
+	<!--<script src="jquery-3.4.1.min.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous">
+	</script>
+
+	<script>
+		/*teste estes comandos no console
+		$('img')
+		S('img').attr('src')
+		$('img').attr('border')
+		$('img').attr('src','esfera_2.png')
+		$('img').attr('border',20)
+
+		$('input').attr('value')
+		$('input').attr('value', 'trocar valor do input')
+		$('input').attr('type', 'password')			*/
+		
+		$(document).ready(()=>{
+			console.log($('div').attr('style', 'background: blue; width: 200px; height: 200px' ))
+		})
+
+	</script>
+</head>
+<body>
+
+	<img src="esfera_1.png" border="5" />
+
+	<div style="background: red; width: 100px; height: 100px "></div>
+
+	<input type="text" value="teste de input">
+
+</body>
+
+</html>

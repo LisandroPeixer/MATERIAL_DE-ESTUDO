@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - Configurações</title>
+		<meta charset="utf-8">
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+		<script src="babel.min.js"></script>
+		<!--script src="https://unpkg.com/@babel/standalone/babel.min.js"></script-->
+	</head>
+
+	<body>
+		<div id="output"></div>
+
+		<!--corrigir syntax em: view/syntax/html underscore-->
+		<!--declare o transpilador na tag-->
+		<script type="text/babel">
+			const getMessage = () => "Hello World";
+			document.getElementById('output').innerHTML = getMessage();	
+		</script>
+	</body>
+</html>

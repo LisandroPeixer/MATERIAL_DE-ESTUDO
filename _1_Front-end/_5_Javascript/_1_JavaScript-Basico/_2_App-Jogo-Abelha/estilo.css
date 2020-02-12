@@ -1,0 +1,64 @@
+/*12° - seta para imagem*/
+html{
+	cursor: url('imagens/mata_mosca.png') 30 30, auto;/*muda imagem da seta no html para referencia*/
+}
+
+/*6º - inicio da parte do cenario______________________________*/
+body{
+	background-image: url(imagens/bg.jpg);/*imagem de fundo*/
+	background-repeat: no-repeat;/*não repetir a imagem*/
+}
+.painel{
+	position: absolute;/*coloca o elemento acima do body*/
+	width: 250px; /*largura*/
+	padding: 10px; /*borda interna*/
+	left: 0px; /* distancia da esquerda*/
+	bottom: 0px; /*distancia de baixo*/
+	border-top: solid 1px #fff; /*borda de cima*/
+	background-color: #fff;/*cor de fundo*/
+	opacity: 0.7; /*opacidade do painel*/
+}
+.vidas{
+	float: left;/*flutuar a esquerda*/
+}
+.cronometro{
+	float: left;/*flutuar a esquerda*/
+	font-size: 20px;/*tamanho da fonte*/
+	font-weight: bold;/*estilo da fonte*/
+}
+/*fim da parte do cenario______________________________*/
+
+
+
+/*inicio da parte do personagem____________________________*/
+/*tamanho do elemento*/
+.elemento0{
+	width: 50px;
+	height: 50px;
+}
+.elemento1{
+	width: 100px;
+	height: 100px;
+}
+.elemento2{
+	width: 150px;
+	height: 150px;
+}
+
+/*lado do elemento ladoA=normal / ladoB=invertido*/
+.ladoA{
+	transform: scaleX(1);
+}
+.ladoB{
+	transform: scaleX(-1);
+}
+/*fim da parte do personagem______________________________*/
+
+
+
+/*inicio de gameOver*/
+.game{
+	left: 500px;
+	top: 250px;
+}
+/*fim de gameover */

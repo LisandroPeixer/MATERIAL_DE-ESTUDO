@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FlexBox</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		
+		#conteudo{
+			background: #cdcdcd;
+			height: 400px;
+			display: flex;/*flexbiliza items do conteudo com os parametros abaixo*/
+
+			flex-direction: column-reverse; /*row|row-reverse|column|column-reverse = 
+			https://www.w3schools.com/cssref/css3_pr_flex-direction.asp*/
+
+			flex-wrap: wrap; /*nowrap|wrap|wrap-reverse = 
+			https://www.w3schools.com/cssref/css3_pr_flex-wrap.asp*/
+
+			justify-content: center;/*flex-start|flex-end|center|space-between|space-around = https://www.w3schools.com/cssref/css3_pr_justify-content.asp*/
+
+			align-items: center; /*stretch|center|flex-start|flex-end|baseline = 
+			https://www.w3schools.com/cssref/css3_pr_align-items.asp*/
+		}
+		.item{
+			width: 200px;
+			height: 200px;
+			background: white;
+			border: 1px solid gray;
+			margin: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<h1>FlexBox</h1>
+	<div id="conteudo">
+		<div class="item">01</div>
+		<div class="item">02</div>
+		<div class="item">03</div>
+		<div class="item">04</div>
+		<div class="item">05</div>
+	</div>
+
+</body>
+</html>

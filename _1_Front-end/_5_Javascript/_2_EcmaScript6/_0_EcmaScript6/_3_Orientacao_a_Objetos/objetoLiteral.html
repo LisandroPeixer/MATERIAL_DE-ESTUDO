@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - Objeto literal</title>
+		<meta charset="utf-8">
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+	</head>
+
+	<body>
+		<!--corrigir syntax em: view/syntax/html underscore-->		
+		<script type="text/babel">
+
+			//declarando objeto com class
+				class ProdutoClass {
+					constructor(nome, descricao, preco){
+						this.nome = nome
+						this.descricao = descricao
+						this.preco = preco
+					}
+					verDetalhes(){
+						console.log(`${this.nome} ${this.descricao} por apenas ${this.preco}`)
+					}	
+				}					
+				let produtoClass = new ProdutoClass('notebook', 'azus core7', 2000)
+				produtoClass.verDetalhes()
+
+		//____________________________________________________________________________
+
+			//declarando objetoLiteral
+				let produtoLiteral = {
+					nome: 'celular',
+					descricao: 'Sansung A10',
+					preco: 999,
+					verDetalhes: function(){
+						console.log(`${this.nome} ${this.descricao} por apenas ${this.preco}`)
+					}
+				}
+				produtoLiteral.verDetalhes();
+
+			/*objetos literais servem para objetos que não tem heranca e assim podem ser originados 
+			por ele mesmos e servem para enviar dados de formularios aos servidores ou demais tarefas
+			simples sem ter ligação com a aplicação:
+			formulario->servidor 
+				recupera dados e monta objeto literal 
+					objLiteral->JSON->HTTP->Server->armazenamento*/
+
+		</script>
+	</body>
+</html>

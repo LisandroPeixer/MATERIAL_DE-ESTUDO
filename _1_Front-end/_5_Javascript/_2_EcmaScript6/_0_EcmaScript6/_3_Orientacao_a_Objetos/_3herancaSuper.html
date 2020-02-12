@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - Herança operador Super()</title>
+		<meta charset="utf-8">
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+
+	<body>
+		<!--corrigir syntax em: view/syntax/html underscore-->
+		<script type="text/babel">
+
+		//Classe pai
+			class Animal{
+				constructor(cor, tamanho, peso){
+					this.cor = cor
+					this.tamanho = tamanho
+					this.peso = peso
+				}			
+			dormir(){
+					console.log('Dormir soninho')
+				}
+			}
+
+		//Classe filho herda o pai
+			class Passaro extends Animal{
+				constructor(cor, tamanho, peso, bico){
+					super(cor, tamanho, peso)//fornece acesso a classe pai
+					this.bico = bico
+				}
+				voar(){
+					console.log('Voar bem alto')
+				}	
+			}
+
+		//classe neto herda o pai e o avo
+			class Papagaio extends Passaro{
+				constructor(cor, tamanho, peso, bico, inteligente){
+					super(cor, tamanho, peso, bico)//sobre os valores para o parametro pai
+					this.inteligente = inteligente
+				}
+
+				chingar(){
+					console.log('filho da p#t@!!!')
+				}
+			}
+
+			let onca = new Animal('pintada', 200, 10000);//enviando valores por parametro via operador super
+			let impala = new Animal('marrom', 180, 5000);
+
+
+			let picapau = new Passaro('amarela', 10, 75, 'reto');
+			let curioh = new Passaro('pardo', 19, 95, 'concavo');
+
+
+			let loro = new Papagaio('verde', 20, 90, 'curvo', true);
+			let lorojose = new Papagaio('verde e amarelo', 22, 150, 'curvo', true);
+
+			console.log(onca);
+			console.log(impala);
+
+			console.log(picapau);
+			console.log(curioh);
+
+			console.log(loro);
+			console.log(lorojose);
+
+			picapau.voar();
+			loro.chingar();
+			loro.dormir();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 var-let</title>
+		<meta charset="utf-8">
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+
+	<body>
+		<div id="output"></div>
+
+		<!--corrigir syntax em: view/syntax/html underscore-->
+		<script type="text/babel">
+			//ver no console
+			
+			//escopo global disponivel pra tudo
+			let glob = 'let trata variavel global exclusivamente neste escopo'
+			console.log(glob)
+			var globall = "global"
+			console.log('global ' + globall)
+			console.log('global não recebe variavel de funcao')
+
+
+			function x(){ //escopo funcao e restrita a funcao e os blocos internos
+				let func = 'let trata variavel de funcao exclusivamente neste escopo'
+				console.log(func)	
+				var funcao = 'funcao'
+				console.log('funcao ' + globall)
+				console.log('funcao ' + funcao)
+				console.log('funcao não recebe variavel de bloco externo ' + bloco)
+					if(true){ //escopo bloco dentro de funcao pode ser elevado para o escopo da funcao que está inserida
+						let bloInt = 'let trata variavel de bloco exclusivamente neste escopo'
+						console.log(bloInt)
+						console.log('bloco dentro de funcao ' + globall)
+						console.log('bloco dentro da funcao ' + funcao)
+					}
+
+			}
+			x()//sempre chame a funcao se ela nao tiver retorno
+
+				if(true){ //escolo bloco pode ser elevado para o escopo global
+					let bloEx = 'let trata variavel de bloco exclusivamente neste escopo'
+					console.log(bloEx)
+					var bloco = 'bloco externo '
+					console.log('bloco externo ' + globall)
+					console.log('bloco externo não recebe variavel de funcao')
+					console.log('bloco externo ' + bloco)
+				}
+		</script>
+
+		<script>
+			document.write('comportamento do var alterando variaveis<br/>')
+			var serie = 'friends'
+			if(true){
+				var serie = 'chicago fire'
+				document.write(serie + '<br/>')
+			}
+			document.write(serie + '<br/><hr/>');
+			
+			document.write('comportamento do let isolando variaveis<br/>')
+			let series = 'friends'
+			if(true){
+				let series = 'chicago fire'
+				document.write(series + '<br/>')
+			}
+			document.write(series + '<br/>');
+		</script>
+	</body>
+</html>

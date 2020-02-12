@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FlexBoxitens2</title>
+		<meta charset="utf-8">
+
+		<style type="text/css">			
+			#conteudo{
+				background: #cdcdcd;
+				height: 600px;
+				display: flex;/*flexbiliza items do conteudo com os parametros abaixo*/
+			}
+			.item{
+				width: 500px;
+				height: 100px;
+				margin: 10px;
+				background: white;
+				border: 1px solid gray;
+			
+				flex-shrink: 1;/*proporção de encolhimento de um item*/
+
+				flex-basis: 300px;/*equaliza tamanhos da grid*/
+			}
+
+			.item1{
+				flex-shrink: 15;
+			}
+			.item2{
+				flex-shrink: 15;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		
+		<h1>FlexBox</h1>
+		<div id="conteudo">
+			<div class="item">01</div>
+			<div class="item item1">02</div>
+			<div class="item">03</div>
+			<div class="item item2">04</div>
+			<div class="item">05</div>
+		</div>
+
+	</body>
+
+</html>

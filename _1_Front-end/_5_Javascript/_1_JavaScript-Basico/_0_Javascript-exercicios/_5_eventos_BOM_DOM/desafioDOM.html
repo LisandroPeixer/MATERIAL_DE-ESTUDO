@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Desafio DOM</title>
+		<meta charset="utf-8">		
+	</head>
+
+	<body>
+		<input id="campo" type="text" onfocus="acionaCampo()" onblur="validaCampo()" />
+
+		<script>
+			
+			//função que deixa amarelo o campo quando acionado
+			function acionaCampo() {
+				document.getElementById('campo').style.background = "yellow"
+			}
+
+			//muda a cor do campo conforme a quantidade de caracteres
+			function validaCampo() {
+				let valorCampo = document.getElementById('campo').value
+				
+				if(valorCampo.length < 3) {
+					document.getElementById('campo').style.background = "red"
+				} else {
+					document.getElementById('campo').style.background = "green"
+				}
+			}
+		</script>
+	</body>
+
+</html>

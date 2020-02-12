@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Aplicação de CSS</title>
+		<meta charset="utf-8">
+
+		<!--web developer chrome:
+		https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm?hl=pt-BR
+			web developer firefox:
+		https://addons.mozilla.org/pt-BR/firefox/addon/web-developer/	
+		-->
+		
+		<!--formas de usar CSS
+		inline: na propria tag
+		interna: no cabeçalho
+		externa: via link
+		-->	
+
+		<style type="text/css">
+			body{
+				background-color: grey; 
+			}
+			p{ 
+				color: green;
+			}
+			h1{ 
+				color: blue; 
+			}
+		</style>
+		
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+
+	</head>
+
+	<body>
+		<a href="index.html">| formas de aplicacao CSS |</a>
+		<a href="bordas.html">| bordas |</a>
+		<a href="classes_id.html">| classes_ids |</a>
+		<a href="cor-imagem.html">| cor-imagem |</a>
+		<a href="div-span.html">| div-span |</a>
+		<a href="estilo-textos.html">| estilo-textos |</a>
+		<a href="Fontes-cores.html">| fontes-cores |</a>
+		<a href="tamanho-textos.html">| tamanho-textos |</a>
+		<a href="pagina1.html">| pagina 1 |</a>
+		<a href="pagina2.html">| pagina 2 |</a><br>
+
+		<!--CSS inline-->
+		<p style="color: red;">Este estilo foi aplicado doretamente na tag.</p>
+
+		<!--CSS interno-->
+		<h1>Estilo CSS (cascading style sheets)</h1>
+
+			<p>Ja este estilo foi aplicado no head e referenciado para toras as tags 'p' e 'h1'</p>
+
+			<p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+		<!--CSS externo-->
+		<div class="texto">
+			<p class="texto">Este estilo foi aplicado via link para o arquivo estilo.css referenciado na head deste documento</p>
+		</div>	
+
+	</body>
+	
+</html>

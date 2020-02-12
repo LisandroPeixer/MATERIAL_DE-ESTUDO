@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BOM - Browser Object Model -time</title>
+		<meta charset="utf-8">	
+	</head>
+
+	<body>
+		<script>
+			//executa função uma vez no tempo programado	
+			setTimeout(function(){document.write('teste <br/>')}, 3000)
+				
+			//executa função continuamente com intervalo de tempo
+			setInterval(function(){document.write('denovo <br/>')}, 3500)
+			
+			//contagem regressiva
+			var i = 5
+			var x = setInterval(function(){
+				document.write(i,'</br>')
+				i--
+				if(i === -1){
+					clearInterval(x)
+				}
+			}, 1000)		
+		</script>	
+	</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>JQuery - Sequencia de carregamento</title>
+	
+	<meta charset="utf-8">
+	<!--<script src="jquery-3.4.1.min.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous">
+	</script>
+	<!--uo assim com um arquivo externo-->
+	<script src="script.js"></script>
+
+</head>
+<body>
+
+	<h1>selecionando elementos em sequencia com jquery</h1>
+
+	<script>
+		//veja no console
+		//use funcoes para execucao <body onload> pra resolver a sequncia gravitacional  
+
+		//quando o documento estiver pronto execute esta funcao
+		$(document).ready(function(){
+
+			function teste1(){
+				console.log($('#ex1'))	
+			}
+			teste1()
+		})
+
+		//ou assim
+		function teste2(){
+			console.log($('#ex2'))	
+		}
+		$(teste2)
+
+		//assim tambem
+		$(function teste3(){
+			console.log($('#ex3'))	
+		})
+
+
+		//esse procedimento e chamado de callback
+		//quando uma funcao so e acionada quando outra funcao for acionada antes
+		//no caso a funcao que mostra no console a div so e acionada 
+		//depois que todos os elementos estiverem disponiveis  	
+
+	</script>
+
+		<div id="ex1">teste1</div>
+		<div id="ex2">teste2</div>
+		<div id="ex3">teste3</div>
+		<div id="ex4">teste4</div>
+
+</body>
+
+
+</html>

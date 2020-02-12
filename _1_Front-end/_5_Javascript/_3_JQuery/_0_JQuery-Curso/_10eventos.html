@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery capturando eventos</title>
+
+		<style>
+			#divExterna{
+				background-color: #ccc;
+				width: 80px;
+				height: 80px;
+				padding: 70px;
+			}
+			#divInterna{
+				background-color: blue;
+				width: 80px;
+				height: 80px;
+			}
+			.inputFocado{
+				background-color: green;
+			}
+ 
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(()=>{
+
+				/* usamos esse codigo para capturar elementos/classes/ids em jquery
+				$('').
+				apos o ponto o definimos a entrada do sinal de acionamento
+				scroll() resize() mousedown() keyup()
+				dentro da entrada usamos arrow function para delegar a acao 
+				()=>{
+					$('').
+				}
+				capturando o elemento que será alterado dentro da funcao e 
+				apos o ponto usamos html() e css() para modificar esse elemento
+
+				*/
+
+			//eventos no browser__________________________________
+				$('#onload').html('pagina carregada!!!')
+
+				$(window).scroll(()=>{
+					$('#scroll').html('scroll acionado!!!')
+				})
+				$(window).resize(()=>{
+					$('#resize').html('resize configurado!!!').css('background-color', 'red')
+				})
+				/*function
+				$('#div1').scroll(function(){
+					$(this).css('background-color','blue')
+				})*/
+				//arrow function
+				$('#div1').scroll(e=>{
+					$(e.target).css('background-color','blue')
+				})	
+
+			//eventos com mouse__________________________________
+				$('#btn1').mousedown(()=>{
+					$('#div2').css('background-color', 'green')
+				})
+				$('#btn1').mouseup(()=>{
+					$('#div2').css('background-color', 'blue')
+				})
+
+				$('#btn2').dblclick(()=>{
+					$('#div2').css('background-color', 'yellow')
+				})
+
+				$('#btn3').click(()=>{
+					$('#div3').css('background-color', 'blue')
+				})
+
+				$('#div3').mousemove((e)=>{
+					//console.log(e)
+					//console.log(e.offsetX, e.offsetY)
+					$('#resultadoDiv1').html('<br/> eixo x: ' + e.offsetX + '<br/> eixo y: ' + e.offsetY)
+				})
+
+				//metodos antigos tem duplicacao de eventos (borbulhamento) no console e podem confundir
+				/*
+				$('#divExterna').mouseover(()=>{
+					$('#resultadoDiv2').html('entrou')
+					console.log('entrou')
+				})
+
+				$('#divExterna').mouseout(()=>{
+					$('#resultadoDiv2').html('saiu')
+					console.log('saiu')
+				})
+
+				$('#divInterna').mouseover(()=>{
+					$('#resultadoDiv3').html('entrou')
+					console.log('entrou')
+				})
+
+				$('#divInterna').mouseout(()=>{
+					$('#resultadoDiv3').html('saiu')
+					console.log('saiu')
+				})
+				*/
+
+				//metodos novos corrigem o problema de borbulhamento no evento
+				
+				$('#divInterna').mouseenter(()=>{
+					$('#resultadoDiv3').css('background-color', 'green').html('mudaCor')
+					console.log('entrou')
+				})
+				
+				$('#divInterna').mouseleave(()=>{
+					$('#resultadoDiv3').css('background-color', 'red').html('mudaCor')
+					console.log('saiu')
+				})	
+				
+				$('#divExterna').mouseenter(()=>{
+					$('#resultadoDiv2').css('background-color', 'green').html('mudaCor')
+					console.log('entrou')
+				})
+				
+				$('#divExterna').mouseleave(()=>{
+					$('#resultadoDiv2').css('background-color', 'red').html('mudaCor')
+					console.log('saiu')
+				})	
+				
+			//eventos com teclado_________________________________________________
+
+				//neste evento no console a repeticao e continua
+				$('#teclado').keydown(()=>{
+					$('#resultadoTecla').html('Tecla pressionada').css('background-color', 'red')
+					console.log('repetir')
+				})
+				//ja neste evento no console o evento ocorre apenas uma vez
+				//capturando o evento para analisar o objeto e possivel ver em keycode o numero da tecla pressionada
+				$('#teclado').keyup((e)=>{
+					$('#resultadoTecla').html('Tecla liberada').css('background-color', 'green')
+					console.log('unico evento')
+					//acao para jogos
+					console.log(e.keyCode)
+					if(e.keyCode == 17){
+						$('#resultadoTecla').html('FOGO!!!').css('background-color', 'yellow')
+					}
+					//acao para chats (ao teclar enter imprima o que foi escrito no campo)
+					if(e.keyCode == 13){
+						let txt = $(e.target).val()
+						$('#resultadoTecla').html(txt).css('background-color', 'blue').css('color','white')
+						$(e.target).val('')
+					}
+				})
+				//para que somente numeros sejam digitados no campo
+				$('#teclado1').keyup((e)=>{
+					if(e.keyCode < 96 || e.keyCode > 105){
+					let num = $(e.target).val()
+					num = num.slice(0, -1)
+
+					$(e.target).val(num)
+					$('#resultadoTecla1').html('somente numeros').css('background-color', 'green')
+					}
+				})
+
+			//eventos de formularios__________________________________________________________________
+				/*
+				$('#nome').focus((e)=>{
+					console.log('nome recebeu foco')
+					$(e.target).addClass('inputFocado')
+				})
+
+				$('#email').focus((e)=>{
+					console.log('email recebeu foco')
+					$(e.target).addClass('inputFocado')
+				})
+
+				$('#nome').blur((e)=>{
+					console.log('nome PERDEU foco')
+					$(e.target).removeClass('inputFocado')
+				})
+
+				$('#email').blur((e)=>{
+					console.log('email PERDEU foco')
+					$(e.target).removeClass('inputFocado')
+				})
+				*/
+				
+				//simplificando metodo acima
+				$('#nome, #email').focus((e)=>{
+					console.log('recebeu foco')
+					$(e.target).addClass('inputFocado')
+				})
+
+				$('#nome, #email').blur((e)=>{
+					console.log('PERDEU foco')
+					$(e.target).removeClass('inputFocado')
+				})
+
+				$('#opcao').change((e)=>{
+					console.log($(e.target).val())
+				})				
+
+				$('#form').submit((e)=>{
+					e.preventDefault() //evita que o formulario atualize a pagina
+					console.log('formulario enviado!!!')
+				})
+
+				$('a').click(e=>{
+					e.preventDefault()//evita que o link seja direcionado
+				})
+
+			})	
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="topo">
+			<h1>Eventos</h1>
+		</div>
+
+		<h3>Browser</h3>	
+			<div>			
+				<span>Onload: </span><span id="onload">?</span><br />
+				<span>Scroll: </span><span id="scroll">?</span><br />
+				<span>Resize Window: </span><span id="resize">?</span>
+				<div id="div1" style="height: 100px; width: 100px; border: 1px solid red; overflow-y: scroll;"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>
+			</div>
+			<hr /><!--____________________________________________________________________________-->
+
+		<h3>Mouse</h3>
+			<div>	
+				<button id="btn1" type="button">Clique aqui</button>
+				<button id="btn2" type="button">Clique aqui 2x</button>
+				<div id="div2" style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px"></div>
+				<span>Resultado do evento sobre a div com mouseup/mousedown/dblclick</span><br/>
+
+				<button id="btn3" type="button">Clique aqui</button>
+				<div id="div3" style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px"></div>
+				<span>Resultado do evento sobre a div com click</span><span id="resultadoDiv1"></span>
+
+				<div id="divExterna">
+					<div id="divInterna"></div>
+				</div>
+				<span>Div Externa: </span><span id="resultadoDiv2"></span>
+				<br/>
+				<span>Div Interna: </span><span id="resultadoDiv3"></span>
+			</div>	
+			<hr /><!--____________________________________________________________________________-->
+
+		<h3>Teclado</h3>
+			<div>
+				<span>Nome:</span>
+				<input id="teclado" type="text" />
+				<span id="resultadoTecla">Resultado do evento sobre o input</span>
+				<br/>
+				<span>Telefone:</span>
+				<input id="teclado1" type="text" />
+				<span id="resultadoTecla1">somente numeros</span>
+			</div>
+			<hr /><!--____________________________________________________________________________-->
+
+		<h3>Formulário</h3>
+			<div>
+				<form id="form">
+					<span>Nome:</span>
+					<input id="nome" type="text" />
+
+					<span>E-mail:</span>
+					<input id="email" type="text" />
+
+					<span>Motivo do contato:</span>
+					<select id="opcao">
+						<option value="">-- Selecione --</option>
+						<option value="duvida">Dúvida</option>
+						<option value="sugestao">Sugestão</option>
+					</select>
+					
+					<button type="submit">Enviar</button>
+				</form>
+			</div>
+
+		<div style="padding: 50px">
+			<a href="http//:www.google.com.br">Google</a>
+		</div>
+
+	</body>
+
+</html>

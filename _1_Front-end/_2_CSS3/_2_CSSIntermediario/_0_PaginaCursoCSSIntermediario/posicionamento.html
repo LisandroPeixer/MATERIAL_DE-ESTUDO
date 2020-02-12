@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Posicionamento</title>
+		<meta charset="utf-8">
+
+		<style type="text/css">			
+			body{
+				background: #007fc7;
+			}
+			p{
+				width: 300px;
+			}
+			h2{
+				position: static; /*padrao de posicionamento*/
+
+				background-color: yellow;
+			}
+			#container{
+				background: #fff;
+				width: 800px;
+				margin: 10px auto;
+			}
+			.absolute{
+				position: absolute;	/*tira elemento do fluxo no container*/
+				background-color: grey;
+
+				border: 1px solid red;
+			}
+			.relative{
+				position: relative; /*utiliza paramentros abaixo para movimentar: top bottom right left*/
+				right: 160px;
+				top: 60px;
+
+				border: 1px solid red;
+				background-color: pink;
+			}
+			.fixed{
+				position: fixed;/*fixa elemento mesmo com rolagem*/
+				bottom: 0px;
+				right: 0px;
+
+				border:1px solid red;
+				background-color: black;
+				color: #fff;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<a href="modelo-caixa.html">| Modelos de Caixa |</a>
+		<a href="elementos-flutuantes.html">| Elementos Flutuantes |</a>
+		<a href="elementos-flutuantes-pratica.html">| Elementos Flutuantes na Pratica |</a>
+		<a href="block-inline.html">| Block Inline |</a>
+		<a href="posicionamento.html">| Posicionamento |</a>
+		<a href="sobrepondo-elementos.html">| Sobreposição |</a>		
+		<a href="links.html">| Links |</a>		
+		<hr>
+		
+		<div id="container">
+			<h2>Posicionamento</h2>
+			<p class="absolute"> P1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+			<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</P>
+
+			<p class="relative"> P2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+			<P>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</P>
+
+			<p class="fixed"> P3 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<P>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</P>
+
+			<P>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</P>
+			<P>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</P>
+			<P>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</P>
+			<P>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</P>
+			<P>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</P>
+			<P>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</P>
+			<P>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</P>
+		</div>
+
+	</body>
+
+</html>

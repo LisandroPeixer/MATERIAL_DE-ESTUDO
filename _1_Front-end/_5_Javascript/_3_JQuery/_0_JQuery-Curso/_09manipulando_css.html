@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>JQuery</title>
+	
+	<meta charset="utf-8">
+	<!--<script src="jquery-3.4.1.min.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous">
+	</script>
+
+	<style>
+		.campo{
+			border: none;
+			padding: 10px;
+		}
+		.padrao{
+			background-color: #ddd;
+		}
+		.erro{
+			background-color: red;
+		}
+	</style>
+
+	<script>
+
+		/*teste estes comandos no console
+		por parametros
+		$('#topo').css('background-color', '#155661')
+		$('#topo').css('background-color', '#155661').css('margin','0px').css('padding','10px 20px 10px 20px')
+		$('body').css('margin', '0px')
+
+		por objeto literal
+		$('#topo').css({'background': '#155661', 'margin': '0px', 'padding': '10px 20px 10px 20px'})
+		$('h1').css({'color': '#fff'})
+		
+		adiciona classe ao elemento
+		$('input').addClass('campo')
+		$('input').addClass('campo padrao')
+		$('textarea').addClass('campo erro')
+
+		verifica se classe existe
+		$('input').hasClass('campo')
+		$('input').hasClass('terra')
+		if($('input').hasClass('campo')) {alert('temos um campo com erro')} 
+
+		remove css de elemento
+		$('textarea').removeClass('erro')
+					*/
+
+		$(document).ready(()=>{
+
+		})
+
+	</script>
+
+	
+</head>
+<body>
+
+	<div id="topo">
+		<h1>Barra de navegação da aplicação</h1>
+	</div>
+
+	<div>
+		<h3>Contato</h3>
+		<hr/>
+
+		<p>Nome:</p>
+		<input type="text"/>
+		<br/>
+
+		<p>E-mail:</p>
+		<input type="text"/>
+		<br/>
+
+		<p>Mensagem:</p>
+		<textarea></textarea>
+		<br/>
+
+		<button type="button">Enviar</button>
+
+	</div>
+
+</body>
+
+</html>

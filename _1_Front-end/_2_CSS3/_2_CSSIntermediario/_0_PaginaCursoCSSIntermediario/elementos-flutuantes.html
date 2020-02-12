@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Elementos Flutuantes na Pratica</title>
+		<meta charset="utf-8">
+
+		<style type="text/css">
+			.conteudo-zero{
+				background: pink;
+				border:1px solid red;
+				margin: 30px;
+				clear: both; /*comando anula flutuação left,right, none, both*/
+			}
+			.conteudo{
+				background: red;
+				border: 1px solid red;
+				width: 200px;
+				height: 200px;
+				float: left; /*comando flutuar*/
+				margin: 20px;
+			}
+			.conteudo1{
+				background: blue;
+				border: 1px solid red;
+				width: 200px;
+				height: 200px;
+				float: right;  /*comando flutuar*/
+				margin: 20px;
+			}
+			.clear{
+				clear: right;  /*comando anula flutuação*/
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<a href="modelo-caixa.html">| Modelos de Caixa |</a>
+		<a href="elementos-flutuantes.html">| Elementos Flutuantes |</a>
+		<a href="elementos-flutuantes-pratica.html">| Elementos Flutuantes na Pratica |</a>
+		<a href="block-inline.html">| Block Inline |</a>
+		<a href="posicionamento.html">| Posicionamento |</a>
+		<a href="sobrepondo-elementos.html">| Sobreposição |</a>		
+		<a href="links.html">| Links |</a>		
+		<hr>
+
+		<div class="conteudo-zero">
+			conteudo-zero
+		
+			<div class="conteudo1">
+				conteudo1
+			</div>
+
+			<p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+			<div class="conteudo">
+				conteudo2
+			</div>
+
+			<p class="clear">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<div class="conteudo">
+				conteudo3
+			</div>
+
+		</div>	
+	</body>
+
+</html>

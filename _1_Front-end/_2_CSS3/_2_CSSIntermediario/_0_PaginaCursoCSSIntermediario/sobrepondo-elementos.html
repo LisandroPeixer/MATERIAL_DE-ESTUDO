@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sobreposição de Elementos</title>
+		<meta charset="utf-8">
+
+		<style type="text/css">
+			.conteudo1{
+				border: 1px solid red;
+				background: orange;
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				z-index:1; /*define qual elemento aparece primeiro*/
+			}
+			.conteudo2{
+				border: 1px solid red;
+				background: green;
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				top:80px;
+				left: 80px;
+				z-index:2;/*define qual elemento aparece primeiro*/
+			}
+			.conteudo3{
+				border: 1px solid red;
+				background: yellow;
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				top:160px;
+				left: 160px;
+				z-index:3;/*define qual elemento aparece primeiro*/
+			}
+		</style>
+
+	</head>
+	
+	<body>
+		<a href="modelo-caixa.html">| Modelos de Caixa |</a>
+		<a href="elementos-flutuantes.html">| Elementos Flutuantes |</a>
+		<a href="elementos-flutuantes-pratica.html">| Elementos Flutuantes na Pratica |</a>
+		<a href="block-inline.html">| Block Inline |</a>
+		<a href="posicionamento.html">| Posicionamento |</a>
+		<a href="sobrepondo-elementos.html">| Sobreposição |</a>		
+		<a href="links.html">| Links |</a>		
+		<hr>
+
+		<div class="conteudo1">
+			conteudo1
+		</div>
+
+		<div class="conteudo2">
+			conteudo2
+		</div>
+
+		<div class="conteudo3">
+			conteudo3
+		</div>
+
+	</body>
+	
+</html>

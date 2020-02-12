@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Formularios</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body> 
+	<!--links de navegacao-->	
+	<a href="index.html">Home</a>/
+	<a href="form.html">formulario</a>/
+	<a href="Caracteres.html">Caracteres</a>/
+	<a href="lista.html">lista</a>/
+	<a href="tabela.html">tabela</a>/
+	<a href="imagem.html">imagem</a>/
+	<a href="https://www.google.com/">google</a>
+
+	<h2>Formulario com login e senha</h2>
+	<form action="pagina_que_recebe.php" ><!--inicio formulario / action define pagina de envio-->
+		Login:<br>
+		<input type="Text" name="Login"><br><!--name define campo de envio-->
+
+		Senha:<br>
+		<input type="password" name="senha"><br><!--type define tipo de caracteres enviados-->
+
+		<input type="submit" value="Logar"><!--botao enviar 'submit'-->
+	</form><!--fim formulario-->
+
+
+
+	<h2>Cadastre-se</h2>
+
+	<form action="pagina_que_recebe.php"><!--inicio formulario-->
+
+		Nome:<br>
+		<!-- input type: text password radio checkbox button submit-->
+		<input type="Text" name="Login"><br><br>
+		Sexo:<br>
+		<input type="radio" name="sexo" value="m"> Masculino<br><!--value define valor escolhido-->
+		<input type="radio" name="sexo" value="f"> Feminino<br>
+		<br>
+		Interesses:<br>
+		<input type="checkbox" name="Interesses"> Futebol<br>
+		<input type="checkbox" name="Interesses"> Cursos<br>
+		<input type="checkbox" name="Interesses"> Moda<br>
+		<br>
+
+		Estado:<br>
+		<select name="Estado"><!--combo com varias opçoes-->
+			<option value="sp">SP</option>
+			<option value="rj">RJ</option>
+			<option value="mg">MG</option>
+			<option value="sc">SC</option>
+			<option value="pr">PR</option>
+		</select><br><br>
+
+		Observações:<br>
+		<textarea name="obs"></textarea><br><br>
+
+		<input type="submit" value="cadastrar"><!--botao enviar-->
+
+	</form><!--fim do formulario-->
+
+	</body>
+
+</html>

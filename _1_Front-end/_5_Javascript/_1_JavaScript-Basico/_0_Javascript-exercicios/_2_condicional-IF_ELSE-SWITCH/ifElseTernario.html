@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IF/ELSE-Ternario</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+
+		<script>
+		  	
+		  	var nota = prompt('Digite a nota do aluno: ')
+		  	var faltas = prompt('Digite as faltas do aluno: ')	
+		  	var media = 7
+		  	var limite = 4
+
+		  	/*Normal
+		  	if (nota >= media && faltas <= limite) {
+				document.write('Aprovado')
+			} 
+			else {
+				document.write('Reprovado')
+			}	*/
+		  	
+		  	/*Ternario não aplica logica em sua escolha
+		  	variavel recebe (condição) pergunta 'verdade' : 'falsa'	*/
+		  	var resultado = (nota >= media && faltas <= limite) ? 'Aprovado' : 'Reprovado'
+		  	document.write(resultado)
+
+		</script>
+	</body>
+
+</html>

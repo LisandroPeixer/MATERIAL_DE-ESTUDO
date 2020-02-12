@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - Polimorfismo</title>
+		<meta charset="utf-8">
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+
+	<body>
+		<!--corrigir syntax em: view/syntax/html underscore-->
+		<script type="text/babel">
+		//(polimorfismo é a personalização de respostas dos metodos herdados)
+
+		//Classe pai
+			class Animal{
+				constructor(especie, cor, altura, gramas){
+					this.especie = especie
+					this.cor = cor
+					this.altura = altura
+					this.gramas = gramas
+				}			
+				dormir(){
+					console.log('Dormir soninho')
+				}
+				cacar(){
+					console.log('faminto!!!')
+				}
+			}
+
+		//Classe filho herda o pai
+			class Passaro extends Animal{
+				constructor(especie, cor, altura, gramas, bico){
+					super(especie, cor, altura, gramas)//fornece acesso a classe pai
+					this.bico = bico
+				}
+				cacar(){
+					console.log('não caço, so como casca de arvores')
+				}
+				voar(){
+					console.log('Voar bem alto')
+				}	
+			}
+
+		//classe neto herda o pai e o avo
+			class Papagaio extends Passaro{
+				constructor(especie, cor, altura, gramas, bico, inteligente){
+					super(especie, cor, altura, gramas, bico)
+					this.inteligente = inteligente
+				}
+				cacar(){
+					console.log('não caço, so como banana')
+				}
+				voar(){
+					console.log('loro Voar mais baixo')
+				}	
+				chingar(){
+					console.log('filho da p#t@!!!')
+				}
+			}//sobrescrevendo metodo do pai
+
+		//instanciando objetos
+			let onca = new Animal('onca', 'pintada', 200, 10000);
+			console.log(onca);
+			onca.dormir();
+			onca.cacar();
+
+			let urso = new Animal('urso', 'marrom', 300, 20000);
+			console.log(urso);
+			urso.dormir();
+			urso.cacar();
+
+			let picapau = new Passaro('picapau', 'amarela', 10, 75, 'reto');
+			console.log(picapau);
+			picapau.dormir();
+			picapau.cacar();
+			picapau.voar();
+
+			let curioh = new Passaro('curioh', 'pardo', 19, 95, 'concavo');
+			console.log(curioh);
+			curioh.dormir();
+			curioh.cacar();
+			curioh.voar();
+
+			let loro = new Papagaio('loro', 'verde', 20, 90, 'curvo', true);
+			console.log(loro);
+			loro.dormir();
+			loro.cacar();
+			loro.voar();
+			loro.chingar();			
+
+			let lorojose = new Papagaio('lorojose', 'verde e amarelo', 22, 150, 'curvo', true);
+			console.log(lorojose);
+			lorojose.dormir();
+			lorojose.cacar();
+			lorojose.voar();
+			lorojose.chingar();						
+		</script>
+	</body>
+</html>

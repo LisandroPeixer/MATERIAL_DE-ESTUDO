@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - Function factory (Obj Literal)</title>
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+
+	<body>
+		<!--corrigir syntax em: view/syntax/html underscore-->
+		<script type="text/babel">
+
+			//construtor de objetos literais
+
+			//elemento construtor com as regras (variavel que recebe funcao)
+			let ClienteFactory = function(nome, telefone, email, endereco){
+				//logica para requisiçao http metodo get
+				return {
+					nome,
+					telefone,
+					email,
+					endereco,
+					status(atual){
+						console.log(atual)
+					}	
+				}	
+			}
+
+			//objetos declarando seus atributos e metodos (variavel que recebe funcao com os atributos)
+			let cliente1 = ClienteFactory('Joao Paulo', '48 99916 9258', 'jp@gmail.com,', 'geral sn SJB');
+			console.log(cliente1);
+			cliente1.status('ativo');
+
+			let cliente2 = ClienteFactory('Toni Manero', '48 99859 2587', 'toni@gmail.com,', 'geral sn CNL');
+			console.log(cliente2);		
+			cliente2.status('suspenso');
+
+			let cliente3 = ClienteFactory('Mercado Puel', '48 3256 9687', 'Puel@gmail.com,', 'geral sn MJG');
+			console.log(cliente3);
+			cliente3.status('cancelado');		
+		</script>		
+	</body>
+
+</html>

@@ -1,0 +1,264 @@
+SASS
+
+https://www.sassmeister.com/
+
+/*for*/
+@for $i from 1 through 3{
+  
+	.itemfor-#{$i} {
+    
+	background:#000;
+    
+	color:#fff;
+  }
+
+}
+
+__________________________________________________________
+
+
+
+/*while*/
+$contar: 1;
+
+@while $contar <= 3 {
+  
+	.itemWhile-#{$contar} {
+    
+	background: blue;
+    
+	color: yellow;
+  
+	}
+   
+$contar: $contar +1;
+
+}
+____________________________________________________________
+
+
+
+
+/*each*/
+$lista: gray, pink, brown;
+
+$cont: 1;
+
+@each $cor in $lista {
+  
+	.itemEach-#{$cont} {
+    
+	background: $cor;
+  
+	}
+  
+$cont: $cont + 1;
+
+}
+____________________________________________________________
+
+
+
+
+/*function*/
+$total: 12;
+
+@function calcular($valor){
+  
+	@return percentage($valor/$total);
+
+}
+
+$resultado: calcular(6);
+
+/*
+
+#{$resultado}
+
+*/
+
+
+__________________________
+$total-colunas: 12;
+
+@function largura-coluna($coluna){
+  
+	@return percentage($coluna/$total-colunas);
+	
+}
+  @for $i from 1 through $total-colunas{
+    
+	.col-#{$i} {
+    
+		width: largura-coluna($i);  
+    
+		background: green;
+    
+	}
+
+}
+_____________________________________________________________
+
+/*funcoes nativas*/
+.fmix {
+	
+	background: mix(green,orange,50%);
+
+}
+
+.fdarken{
+	
+	background: darken(orange,50%);
+
+}
+
+.flighten{
+	
+	background: lighten(orange,50%);
+
+}
+
+_____________________________________________________________
+
+/*mixin*/
+@mixin titulo ($cor, $posicao:center) {
+
+	text-align: $posicao;	
+	color:$cor;
+   
+	background: black;
+  
+	padding: 15px;
+
+}
+
+h1{
+  
+	@include titulo (white);
+
+}
+
+h2{
+  
+	@include titulo (yellow, right);
+
+}
+
+______________________________________________________________
+
+/* herança*/
+.pai{
+  
+	background: blue;
+
+}
+
+.mae{
+  
+	color: yellow;
+
+}
+
+%filho{
+  
+	@extend .pai;
+  
+	@extend .mae;
+
+  	width:100px;
+
+}
+.neto{
+  
+	@extend %filho;
+  
+	height: 200px;  
+
+}
+___________________________________________________________
+
+/*IF ELSE*/
+
+$tema: blackfriday;
+
+@if($tema == blackfriday){
+	
+	h4{
+  background: black;
+	
+	color: yellow;
+  
+	}
+
+}@else if($tema == natal){
+	
+	h4{
+	background: red;  
+  
+	color: white;
+  
+	}
+
+}@else{
+  
+	
+	h4{
+  background:blue;
+  
+	color:green;
+  
+	}
+
+
+}
+
+-----------------------------------------------------------
+
+HTML
+
+<div class="itemfor-1">for-1</div>
+
+<div class="itemfor-2">for-2</div>
+
+<div class="itemfor-3">for-3</div>
+
+<hr/>
+
+
+<div class="itemWhile-1">while-1</div>
+
+<div class="itemWhile-2">while-2</div>
+
+<div class="itemWhile-3">while-3</div>
+
+<hr/>
+
+
+<div class="itemEach-1">Each-1</div>
+
+<div class="itemEach-2">Each-2</div>
+
+<div class="itemEach-3">Each-3</div>
+
+<hr/>
+
+<div class="col-1">enumere a classe col-'conforme o tamanho desejado'</div> 
+<hr/>
+
+<div class="fmix">mix</div>
+
+<div class="fdarken">darken</div>
+
+<div class="flighten">lighten</div>
+
+<hr/>
+
+<h1>mixin1</h1>
+<h2>mixin2</h2>
+<hr/>
+
+<p class="filho">heranca diretiva<p/>
+<p class="neto">heranca de heranca<p/>
+<hr/>
+
+<h4>LOJAS MARISA</h4>

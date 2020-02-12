@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - Objeto literal</title>
+		<meta charset="utf-8">
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+	</head>
+
+	<body>
+		<!--corrigir syntax em: view/syntax/html underscore-->	
+		<script type="text/babel">
+	
+			let nome = 'maria'
+			let idade = 4
+			let sexo = 'menina'
+			let profissao = 'de menor'
+
+		//com par nome:valor,	
+			let objeto = {
+				nome: nome,
+				idade: idade,
+				sexo: sexo,
+				profissao: profissao,
+				exibirResumo: function(){
+					console.log(`${this.nome}, ${this.idade} anos, ${this.sexo} é ${this.profissao}`)
+				}	
+			}
+			console.log(objeto)
+			objeto.exibirResumo()	
+
+		//Simplificando a declaracao		
+			let objeto2 = {
+				nome,
+				idade,
+				sexo,
+				profissao,
+				exibirResumo(){
+					console.log(`${this.nome}, ${this.idade} anos, ${this.sexo} é ${this.profissao}`)
+				}	
+			}
+			console.log(objeto2)
+			objeto2.exibirResumo()	
+
+		//modificando valores
+			let pessoa = {
+				nome: 'jose',
+				idade: 45
+			}
+			console.log(pessoa.nome)
+			console.log(pessoa.idade)
+			//atribuindo novos valores com o operador "."
+			pessoa.nome = 'fernanda'
+			pessoa.idade = 32
+			console.log(pessoa.nome)
+			console.log(pessoa.idade)
+
+		//acrescentando atributos e metodos
+			pessoa.sexo = 'feminino'
+			console.log(pessoa.nome)
+			console.log(pessoa.idade)
+			console.log(pessoa.sexo)
+			//recupero o objeto e atribuo a funcao com o operador "."
+			pessoa.dizerOi = () => console.log('olá tudo bem!!!')
+			pessoa.dizerOi()
+
+		//objeto literal unico
+			/*objetos literais são unicos e suas associações são ponteiros que indicam o objeto como uma referencia de acesso da variavel que o aponta*/
+
+			let assinatura = {
+				idCliente: 123456,
+				descricao: 'acesso a internet',
+				status(){
+					console.log('ativo')
+				}
+			}
+			console.log(assinatura.descricao);
+			//variavel y recebendo valores de assinatura
+			let y = assinatura
+			console.log(y.descricao);
+			//variavel y tem alteracao do atributo descricao
+			y.descricao = 'acessoa a internet + tv + celulares'
+			//tanto variavel y quanto objeto assinatura recebem o mesmo valor  porque um aponta pro outro
+			console.log(y.descricao);
+			console.log(assinatura.descricao);
+			//veja no console
+		</script>		
+	</body>
+</html>

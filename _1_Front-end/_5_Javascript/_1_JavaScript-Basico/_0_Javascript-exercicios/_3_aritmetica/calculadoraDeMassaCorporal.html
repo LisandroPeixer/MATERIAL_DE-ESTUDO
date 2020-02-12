@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculadora de Massa Corporal</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+
+		<h1>Calculadora de Massa Corporal</h1>
+
+		<script type="text/javascript">
+			
+			var nome = prompt('Digite seu nome: ')
+			var altura = prompt('Digite sua altura: ')
+			var peso = prompt('Digite seu peso: ')
+			var massa = null
+
+			altura = parseFloat(altura)
+			peso - parseFloat(peso)
+
+			massa = peso / (altura*altura)
+
+			document.write(nome, ' possui massa corporal de: ', massa, ' classificado como: ' )
+
+			if (massa < 16) {document.write('Baixo peso muito grave') }
+			else if (massa >= 16 && massa <= 16.99) {document.write('Baixo peso grave') }
+			else if (massa >= 17 && massa <= 18.49) {document.write('Baixo grave') }
+			else if (massa >= 18.50 && massa <= 24.999) {document.write('Peso normal') }
+			else if (massa >= 25 && massa <= 29.99) {document.write('Sobrepeso')	}
+			else if (massa >= 30 && massa <= 34.99) {document.write('Obesidade grau I') }
+			else if (massa >= 35 && massa <= 39.99) {document.write('Obesidade grau II')	}
+			else {document.write('Obesidade grau III') }
+
+		</script>
+	</body>
+	
+</html>

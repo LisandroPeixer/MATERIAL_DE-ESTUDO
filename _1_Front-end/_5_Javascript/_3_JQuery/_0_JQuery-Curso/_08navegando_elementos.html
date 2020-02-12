@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>JQuery</title>
+	
+	<meta charset="utf-8">
+	<!--<script src="jquery-3.4.1.min.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous">
+	</script>
+
+	<script>
+
+		/*teste estes comandos no console
+		.parent() Acessa elemento pai
+		$('.secao1').parent()
+		$('.item').parent() 
+
+		.closest() pega o elemento superior declarado
+		$('#subsecao').closest('#pagina')
+		$('#subsecao').closest('.secao2')		        
+		$('.item').closest('#topo')
+		$('.item').closest('ul')		
+
+		.find() pega elemento inferior declarado
+		$('#rodape').find('p')  
+
+		e possivel combinar elementos desde que todos tenham classe/id
+		$('#subsecao').parent().parent().parent().parent().find('span')
+		$('#subsecao').closest('#url').find('span')
+
+		ou se a pesquisa for por elemento apenas
+		$('#subsecao').closest('body').find('li')			*/
+		
+		$(document).ready(()=>{
+
+		})
+
+	</script>
+</head>
+<body id="url">
+
+	<header>
+		<div id="topo">
+			<ul id="menu">
+				<li class="item"></li>
+				<li class="item"></li>
+			</ul>
+		</div>
+	</header>
+		
+<!--_____________________________________________________________-->
+
+	<section class="dir">
+		<div id="pagina">
+			<section class="secao1">
+				<h1></h1>
+			</section>
+			<section class="secao2">
+				<div id="subsecao"></div>
+			</section>
+		</div>
+	</section>
+<!--_____________________________________________________________-->
+
+	<footer class="dir">
+		<div id="rodape">
+			<p></p>
+			<span id="opcao1"></span>
+		</div>
+	</footer>
+
+</body>
+
+</html>

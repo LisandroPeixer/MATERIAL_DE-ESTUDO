@@ -1,0 +1,27 @@
+/*herança*/
+
+body{
+	color: red;
+	background: yellow
+}
+
+/*especificidades*/
+p{
+	color: black !important; /*declara prioridade*/
+}
+p{
+	color:pink;
+}
+
+h2.verde{
+	color: green; /*seleciona elemento com classe especifica o ID/# é o primeiro*/
+}
+
+
+/*precedencia*/
+*{
+	border:1px solid red; /* seleciona todos os elementos da pagina*/
+}
+p{
+	border: none;
+}

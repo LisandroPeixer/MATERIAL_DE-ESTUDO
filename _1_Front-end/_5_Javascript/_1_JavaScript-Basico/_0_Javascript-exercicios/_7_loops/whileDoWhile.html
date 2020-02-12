@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>WHILE DO-WHILE</title>
+		<meta charset="utf-8">		
+	</head>
+
+	<body>
+		<script>
+
+			//while testa antes de executar
+				//sequencia
+					var x = 1
+					while(x<=10){
+						document.write(x + '<br/>')
+						x++
+					}
+				//fim de sequencia
+
+				//pulando 
+					var y = 1
+					while(y<=10){
+						document.write(y + '<br/>')
+						y+=3
+					}
+				//fim de pulando
+
+				//com break
+					var x = 1
+					while(x<=10){
+						document.write(x + '<br/>')
+						if(x==4){
+							break
+						}
+						x++
+					}
+				//fim de com break
+
+				//com continue pula o valor igual
+					var x = 1
+					while(x<=10){
+						x++
+						if(x==4){
+							continue
+						}
+						document.write(x + '<br/>')
+					}
+				//fim de com continue pula o valor igual
+
+			//fim de while testa antes de executar
+
+
+			//do-while testa depois de executar
+				var a = 11
+				do{				
+					document.write(a + '<br/')
+				} while(a<=10)
+			//fim de do-while testa depois de executar
+				
+
+			//percorrendo arranjos para imprimir seu conteudo
+				var frutas = Array()
+				frutas[0] = 'banana'
+				frutas[1] = 'mamao'
+				frutas[2] = 'laranja'
+				frutas[3] = 'maça'
+
+				var indice = -1
+				while(indice < frutas.length){
+					document.write(frutas[indice] + '<br/>')
+				indice++
+				}
+			//fim de percorrendo arranjos para imprimir seu conteudo
+
+		</script>
+	</body>
+
+</html>

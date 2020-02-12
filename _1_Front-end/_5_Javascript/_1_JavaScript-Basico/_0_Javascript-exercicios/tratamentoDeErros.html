@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript</title>
+		<meta charset="utf-8">		
+	</head>
+
+	<body>
+		<script>
+			
+			var video = Array()
+			video[1] = Array()
+			video[1]['nome'] = 'rambo'
+			video[1]['categoria'] = 'acao'
+
+			function getVideo(video){
+				
+				try{
+					console.log(video[0]['nome'])	
+				} 
+				catch(erro){
+					//console.log(erro)
+					console.log('pegar o erro para tratar')
+					//throw new error('deu ruim mas vamos arrumar!!!')
+				}
+				finally{
+					console.log('sempre passa por aqui')
+				}
+				console.log('a aplicação não morreu')
+			}
+			getVideo(video)
+		</script>		
+	</body>
+
+</html>

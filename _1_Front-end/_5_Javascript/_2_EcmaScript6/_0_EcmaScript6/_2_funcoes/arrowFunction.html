@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - Arrow function</title>
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+
+	<body>
+		<!--corrigir syntax em: view/syntax/html underscore-->
+		<script type="text/babel">
+
+			let numero = prompt('Digite um numero: ')
+
+			//metodo antigo
+			let quadrado = function(x){
+				return x * x
+			} 
+			document.write(quadrado(numero),'<br/>');
+
+			//metodo com arrow se tiver so um parametro pode deixar sem ()
+			let divisao = y =>{
+				return y / 2
+			}
+			document.write(divisao(numero),'<br/>');
+
+			//metodo moderno
+			let multiplicar = z => z * 2 //return implicito
+			document.write(multiplicar(numero),'<br/>');
+
+			//com comparacao do metodo antigo
+			let maiorOuMenor = function(){
+				if(numero>=6){
+					document.write('maior <br/>')
+				} else {
+					document.write('menor <br/>')
+				}
+			}
+			maiorOuMenor()
+
+			//com comparacao no metodo moderno
+			let mode = () => numero % 2 === 0 ? "par" : "impar" //retorno implicito
+			document.write(mode(numero));
+		</script>
+	</body>
+</html>

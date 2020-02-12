@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - Destructuring</title>
+		<meta charset="utf-8">
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+		<script src="babel.min.js"></script>
+		<!--script src="https://unpkg.com/@babel/standalone/babel.min.js"></script-->
+	</head>
+
+	<body>
+		<!--corrigir syntax em: view/syntax/html underscore-->
+		<!--declare o transpilador na tag-->
+		<script type="text/javascript">
+
+			//destructuring é isolar indice de array em uma variavel para usar no sistema,
+			let frutas = ['laranja', 'mamao', 'banana', 'maçã']
+			//pega pelo indice
+			let a = frutas[1]
+			//ou pega na sequencia
+			//pode pular se deicar o espaço vazio
+			let [b, ,c ,d, e = 'abacate'] = frutas//e declarar valores que estao undefined
+			console.log(a, b, c, d, e);
+
+
+			//com arrays bidimensionais
+			let carros  = [['gol', 'mobi', 'ka', 'onix'],['volks', 'fiat', 'ford', 'chev']]	
+			let [[n1,,,],[]] = carros
+			let [[,n2,,],[]] = carros
+			let [[,,n3,],[]] = carros
+			let [[,,,n4],[]] = carros
+			let [[],[n5,,,]] = carros
+			let [[],[,n6,,]] = carros
+			let [[],[,,n7,]] = carros
+			let [[],[,,,n8]] = carros
+			console.log(n1);
+			console.log(n2);
+			console.log(n3);
+			console.log(n4);
+			console.log(n5);
+			console.log(n6);
+			console.log(n7);
+			console.log(n8);
+
+			//é possivel fazer com objetos (e com objetos de objetos)
+			//ver composicao abaixo classificada como: 'tem um'
+			let produto = {
+				descricao: 'notebook',
+				preco: 1800,
+				detalhes: {
+					fabricante: 'Dell',
+					modelo: undefined
+				}
+			} 
+			let { descricao, preco } = produto
+			console.log(descricao, preco)
+			//ou apontando para outras variaveis e declarando atributos undefined
+			let { descricao: des, preco: pr, desconto = 5 } = produto
+			console.log(des, pr, desconto)
+			//extraindo atributos dentro de objetos 'tem um' com default para undefined
+			let { detalhes: { fabricante, modelo }} = produto
+			console.log(fabricante, modelo = 'não informado')
+
+			//token
+			//para arrays usar []
+			//para objetos usar {}
+
+			//em funcoes
+			//objeto
+			let obj = {
+				a: 10,
+				b: 20,
+				c: 30,
+				d: 40,
+				e: 50,
+				f: 60,
+				g: 70,
+				h: 80,
+				i: 90
+			}
+			function teste1 (d, g){
+				console.log(d, g);
+			}
+
+			//para atributos especificos 
+			teste1(obj.d, obj.g);			
+			function teste2 ({a, b, c, d, e, f, g, h, i, z = 100 }){
+				console.log(a, b, c, d, e, f, g, h, i, z)
+			}
+			teste2(obj);
+
+			//array
+			let arr = [15, 25, 35, 45, 55]
+			function teste3 (a, d){
+				console.log(a, d);
+			}
+			teste3(arr[0], arr[3])
+			//pode pular e usar dafault
+			function teste4 ([a, b, , c, d, e = 200]){
+				console.log(a, b, c, d, e)
+			}
+			teste4(arr);
+
+			//usando o rest na destruturacao para isolar variavel
+			//objetos
+			let obj2 = {
+				a2: 10,
+				b2: 20,
+				c2: 30,
+				d2: 40,
+				e2: 50,
+				f2: 60,
+				g2: 70,
+				h2: 80,
+				i2: 90
+			}
+			let { a2, ...z } = obj2
+			console.log(a2);
+			console.log(z);
+
+			//array
+			let arr2 = [15, 25, 35, 45, 55]
+			let [ a3, ...z2 ] = arr2
+			console.log(a3);
+			console.log(z2);
+		</script>		
+	</body>
+</html>

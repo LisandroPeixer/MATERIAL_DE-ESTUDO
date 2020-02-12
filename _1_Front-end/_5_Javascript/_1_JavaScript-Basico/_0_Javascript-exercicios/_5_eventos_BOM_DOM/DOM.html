@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Document Object Model</title>
+		<meta charset="utf-8">
+
+		<style>
+			.opcao1{
+				background: #ff0000;
+				color: #fff;
+			}			
+			.opcao2{
+				width: 400px;
+				height: 50px;
+				background-color: #ff0000;
+				text-align: center;
+				font-size: 25px;
+				color: #fff;
+				padding: 25px;
+			}
+		</style>	
+
+	</head>
+
+	<body>
+		<!--inicio manipulador de classes-->
+			<h1>Manipulando Classes</h1>
+					<button type="button" onclick="modificaClasses()">Modificar</button>
+				<hr>	
+					<div class="opcao1" id="mensagem">Elemento a ser Modificado</div><hr>
+		<!--inicio manipulador de classes-->
+
+
+		<!--inicio manipulador de estilos-->
+			<h1>Manipulando Estilos</h1>
+				<button type="button" onclick="modificaEstilo('#ff0000', '100px', '100px')">Vermelho</button>
+				<button type="button" onclick="modificaEstilo('#00ff00', '300px', '200px')">Verde</button>
+				<button type="button" onclick="modificaEstilo('#0000ff', '200px', '20px')">Azul</button>
+				<hr>
+				<div style="border: 1px solid #000; width: 10px; height: 10px;" id="estilo"></div><hr>
+		<!--fim manipulador de estilos-->
+
+
+		<!--inicio manipulador de numeros e strings no input-->
+			<h1>Manipulando Numeros e Strings no input</h1>
+				<input 
+					type="text"
+				 	placeholder="Digite um caracter aqui: "
+				 	onkeyup="distribuiCaracter()"
+				 	id="entrada" 
+				 	name=""><br><hr>
+
+				<span>Letras</span>
+				<input type="text" disabled="disabled" id="letras"><hr>
+				
+				<span>Numeros</span>
+				<input type="text" disabled="disabled" id="numeros">
+		<!--fim manipulador de numeros e strings no input-->
+
+
+		<!--inicio do seletor de elementos-->	
+			<h1>Selecionando elementos com metodo get()</h1>
+				<p>abra o console "control + shift + i</p>
+				<input 
+					type="text"
+				 	placeholder="Digite seu nome: "
+				 	id="nome_usuario"
+				 	class="campo_texto" 
+				 	name="nome"
+				 >
+				 <input 
+					type="text"
+				 	placeholder="Digite seu telefone: "
+				 	id="nome_usuario"
+				 	class="campo_numero" 
+				 	name="number"
+				 >
+				 <input 
+					type="text"
+				 	placeholder="Digite seu endereço: "
+				 	id="nome_usuario"
+				 	class="campo_texto" 
+				 	name="adress"
+				 ><hr> 
+		<!--fim do seletor de elementos-->
+
+
+		<script>
+			//inicio manipulador de classes
+				function modificaClasses(){
+					document.getElementById('mensagem').className = 'opcao2'
+				}
+			//Fim do manipulador de classes	
+
+
+			//inicio manipulador de estilos
+				function modificaEstilo(corDeFundo, largura, altura){
+					document.getElementById('estilo').style.background = corDeFundo
+					document.getElementById('estilo').style.width = largura
+					document.getElementById('estilo').style.height = altura
+				}
+			// fim manipulador de estilos
+
+
+			//inicio manipulador de numeros e strings no input
+				function distribuiCaracter(){
+					//captura o caracter digitado
+					var caracter = document.getElementById('entrada').value
+					//limpar campos
+					document.getElementById('entrada').value = ''
+					//limpa os espaços antes e depois do caracter
+					caracter.trim()
+					//selecina caracteres
+					switch(caracter){
+						case '0':
+						case '1':
+						case '2':
+						case '3':
+						case '4':
+						case '5':
+						case '6':
+						case '7':
+						case '8':
+						case '9':
+							//adiciona caracter no campo numeros
+							document.getElementById('numeros').value += caracter	
+						break;
+					default:
+						//adiciona caracter no campo letras
+						document.getElementById('letras').value += caracter	
+					}
+				}
+			//fim manipulador de numeros e strings no input
+
+
+			//inicio do seletor de elementos
+				//pega um elemento especificado pelo Id
+				console.log(document.getElementById('nome_usuario'))
+				//pega uma coleção de elementos
+				console.log(document.getElementsByTagName('input'))
+				console.log(document.getElementsByClassName('campo_texto'))
+				console.log(document.getElementsByName('nome'))
+			//fim do seletor de elementos	
+		</script>
+	</body>
+
+</html>

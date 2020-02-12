@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BOM - Browser Object Model</title>
+		<meta charset="utf-8">		
+	</head>
+
+	<body>
+		<h3>botoes para abrir, fechar popups e imprimir pagina</h3>
+		<button onclick="abrirGoogle()">Google</button>
+		<button onclick="fecharGoogle()">Fechar</button>
+		<button onclick="window.print()">Imprimir</button><hr/>
+
+		<h3>botoes com location</h3>
+		<button onclick=" window.location.href='https://www.google.com' ">Google</button>
+		<button onclick=" window.location.href='https://www.w3schools.com' ">W3S</button>
+		<button onclick=" window.location.reload()">Reload</button><hr/>
+
+		<script>
+			//função para abrir fechar popup e imprimir pagina
+			//https://www.w3schools.com/js/js_window.asp
+			var Google
+			function abrirGoogle(){
+				Google = window.open('https://www.google.com/', 'nova janela', 'width=500, height=500')
+			}
+
+			function fecharGoogle(){
+				Google.close()
+			}
+
+			//função para resoluções de tela
+			//https://www.w3schools.com/js/js_window_screen.asp
+			var altura = window.screen.availHeight
+			var largura = window.screen.availWidth
+
+			document.write('Altura: ' + altura + '<br/>')
+			document.write('Largura: ' + largura + '<br/>')
+
+			if(largura < 500){
+				document.write('celular')
+			} else {
+				document.write('desktop')
+			}		
+
+			//Função para redirecionamento
+			//https://www.w3schools.com/js/js_window_location.asp
+			//window.location.href='https://www.google.com/' 
+			//SE DESCOMENTAR FAZ A PAGINAR SER DIRECIONADA PARA O ENDEREÇO		
+		</script>
+	</body>
+
+</html>

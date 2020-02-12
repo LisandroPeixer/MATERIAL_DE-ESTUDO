@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FlexBoxItems1</title>
+		<meta charset="utf-8">
+
+		<style type="text/css">			
+			#conteudo{
+				background: #cdcdcd;
+				height: 600px;
+				display: flex;/*flexbiliza items do conteudo com os parametros abaixo*/
+			}
+			.item{
+				width: 100px;
+				height: 100px;
+				margin: 10px;
+				background: white;
+				border: 1px solid gray;
+				
+				flex-grow: 0;/*define a proporção de espansao dos itens na grid*/
+			}
+
+			.item1{
+				flex-grow: 2;/*preenchimento do espaço que sobra na grid*/
+			}
+			.ordem1{
+				order: 1;/*define a ordem dos itens na grid*/
+			}
+			.ordem2{
+				order: 2;
+			}
+			.ordem3{
+				order: 3;
+			}
+			.ordem4{
+				order: 4;
+			}
+			.ordem5{
+				order: 5;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		
+		<h1>FlexBox</h1>
+		<div id="conteudo">
+			<div class="item ordem3">01</div>
+			<div class="item item1">02</div>
+			<div class="item ordem5">03</div>
+			<div class="item ordem4">04</div>
+			<div class="item ordem1">05</div>
+		</div>
+
+	</body>
+</html>

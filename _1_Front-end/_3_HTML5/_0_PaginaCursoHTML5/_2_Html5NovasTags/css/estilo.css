@@ -1,0 +1,50 @@
+
+
+/*htmlshiv = https://github.com/aFarkas/html5shiv
+*/
+
+
+/*article section aside time*/
+article{
+	background: orange;
+}
+section{
+	border:1px dotted #fff;
+}
+time{
+	background: white;
+}
+aside{
+	background: red;
+	margin-left: 800px;
+}
+
+
+/*header nav footer*/
+html{
+	margin:0;
+	background: grey;
+}
+header{
+	border: 1px solid red;
+	background: black;
+	color: white;
+	padding: 30px;
+	text-align: center;
+}
+nav{
+	background: green;
+	color: yellow;
+	padding: 20px;
+	margin: 50px;
+}
+
+nav a{
+	text-decoration: none;
+	color: yellow;
+}
+
+footer{
+	background: blue;
+	padding: 20px;
+}

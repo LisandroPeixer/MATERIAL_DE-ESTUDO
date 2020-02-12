@@ -1,0 +1,267 @@
+Comandos javascript
+use a tag <script></script> no final do body
+
+///////////////////DECLARANDO VARIAVEIS
+var variavel0 = valor			//variavel basica (desuso)
+let variavel1 = valor			//variavel atual (mantem valor dentro de escopo)
+const VARIAVEL2 = valor			//variavel constante (não altera seu conteudo exceto dentro de funcões)
+
+
+/////////////////////////templateStrings
+`olá ${nome} tudo bem!!!`
+
+
+///////////////////////////////IMPRESSÃO
+console.log(variavel ou objeto)		//imprime variavel no console(control/shift/i)
+document.write(texto)			//imprime variavel na pagina
+alert('mensagem')			//cria caixa de alerta no browser	
+
+
+/////////////////////INSERÇÃO
+prompt('digite aqui')			//abre caixa para insercao de dados=String
+
+
+///////////////////COMANDOS CONDICIONAIS
+if(true){faça isso}				//comando if
+if(true){faça isso}else{faça aquilo}		//comando if/else
+if(true){faça isso}else if(){faça aquilo}else{}	//comando if/else if/else
+
+
+///////////ARITMETICOS
++	//soma ou concatenacao
+-	//diminuicao
+*	//multiplicacao
+/	//divisao
+%	//resto da divisao(bom para saber se e par ou impar)
++=	//atribuicao(quando saldo recebe saldo+deposito)
+-=	//decrementacao(quando saldo = saldo-saque)
+++	//atribuicao de +1
+--	//decrementacao de -1
++10	//atribuicao de 10 em 10
+-10	//decrementacao de 10 em 10
+	
+
+///////////////OPERADORES DE COMPARACAO
+==	//igual
+===	//identico
+!=	//diferente
+!==	//nao identico
+<	//menor
+>	//maior
+<=	//menor igual
+>=	//maior igual
+
+
+//////////////OPERADORES LOGICOS
+&&	//todas verdadeiras
+||	//Uma ou outra verdadeira
+!	//negacao (inverte logica)
+
+
+/////////////////////////////CASTING
+variavel = parseInt(variavel)		//muda string para number(Int)inteiro
+variavel = parseFloat(variavel)		//muda string para number(Float)fração
+variavel.toString()			//muda number para string  
+
+
+////////////////////////FUNÇÕES
+return: ( retorna o resultado da logica para a funcao retornarAreaTerreno(largura, comprimento) ) 
+	function retornarAreaTerreno(largura, comprimento){
+		var resultado = largura * comprimento
+		return resultado
+	}
+	
+	document.write(retornarAreaTerreno(15, 25))		
+___________________________________________________________
+void: ( sem retorno para a funcao, apenas executa a logica, e neste caso tem que fazer a impressão na logica )
+	function retornarAreaTerreno(largura, comprimento){
+		var resultado = largura * comprimento
+		document.write(resultado)
+	}
+	
+	 retornarAreaTerreno(15, 25)
+___________________________________________________________
+Arrowfunction (funcao simplificada)
+	let mode = () => numero % 2 === 0 ? "par" : "impar" //retorno implicito
+			document.write(mode(numero));
+
+
+//////////////////////////////////////////////////////////////FUNÇÕES NATIVAS
+setVariavel() 			//configura, altera, modifica
+getVariavel()			//captura, consulta, mostra
+.innerHTML			//captura texto 
+.appendChild('recebedor')	//inclui elemento no recebedor
+.trim()				//limpa os espaços antes e depois do caracter no input
+.close()			//fecha janela
+window.open('url')		//abre endereço
+window.print()			//impressão
+window.screen.availHeight	//captura altura
+window.screen.availWidth	//captura largura
+window.location.href='url'	//redireciona para endereço http
+window.location.reload()	//atualizar pagina
+setTimeout(acao, 1000)		//temporizador 
+clearTimeout()			//fecha temporizador
+setinterval(acao, 1000)		//intercalador de tempo 
+clearInterval()			//fecha intercalador
+______________________________________________________
+MATEMATICA:
+Math.ceil() 		//arredonda para cima
+Math.floor() 		//arredonda para baixo
+Math.round() 		//arredonda pela proximidade
+.toFixed(2)		//arredonda casas decimais
+Math.random() 		//gera um numero aleatorio entre 0 e 1
+eval()			//converte string para numero no console
+______________________________________________________________
+DATAS:
+var data = new Date()	//variavel recebendo data do sistema e imprimindo abaixo
+document.write(data.getDate() + '/' + data.getMonth() + '/' + data.getFullYear() + '<br/><hr/>')
+.getTime() 		//transforma datas em milissegundos(para calculos)
+__________________________________________________________________________
+STRINGS:
+.length 	//retorna a quantidade de caracteres
+.charAt(4) 	//retorna o caracter posicionado naquele numero
+.indexOf() 	//retorna a quantidade de caracteres daquela palavra
+.replace() 	//troca palavras
+.substr(4, 5) 	//apartir do inicio, quantos recupero
+.toUpperCase() 	//caixa alta
+.toLowerCase() 	//caixa baixa 
+_______________________________________________________________________
+ARRAYS:
+[].push(elemento)			//para incluir valores no final do Array
+[].unshift(elemento)			//para incluir valores no inicio do Array
+[].pop()				//para excliur valores no final do Array
+[].shift() 				//para excluir valores no inicio do Array
+[].indexOf(prompt('digite: '))		//para pesquisar 
+.sort()					//para ordenação alfanumerica de arrays 
+
+Função para ordenação numerica de arrays
+console.log(listaNumeros.sort(emOrdem))	
+	function emOrdem(a, b){
+	return a - b}
+
+Funcao para percorrer e imprimir arrays
+array.forEach(function(valor, indice, array){
+	document.write('indice: ' + indice + ' | valor: ' + valor + '<br/>')
+	})
+
+
+////////////////////////ATRIBUTOS PARA EVENTOS
+MOUSE:
+Coloque como atributo na div
+onclick="nomeDaFuncao()"	//ao clicar sobre a div dispara a função
+ondblclick="nomeDaFuncao()"	//ao clicar duas vezes sobre a div dispara a função
+onmouseup="nomeDaFuncao()"	//ao soltar o botao na div dispara a função 
+onmouseover="nomeDaFuncao()"	//ao passar sobre a div dispara a função
+onmouseout="nomeDaFuncao()"	//ao tirar da div dispara a função 
+______________________________________________________________________________
+TECLADO:
+onkeydown="acao()"		//ao apertar a tecla
+onkeyup="acao()"		//ao soltar a tecla
+onkeypress="acao()"		//enqunto a tecla estiver pressionada (-control)
+______________________________________________________________________________
+BODY:
+onresize="acao()"		//quando o browser for redimensionado
+onscroll="acao()"		//quando acionar a barra de rolagem
+______________________________________________________________________________
+FORMULARIOS:
+coloque como atributo do input
+onfocus="acao()"		//ao clicar com o mouse na caixa
+onblur="acao()"			//quando o cursos sai da caixa
+
+coloque como atributo do select
+onchange"acao()"		//ao selecionar a opcao do select
+
+
+////////////////////////////////////SELEÇÃO DE ELEMENTOS HTML
+document.getElementByTagName('alvo')	//seleciona pela tag	
+document.getElementByClassName('alvo')	//pela class
+document.getElementByName('alvo')	//pelo name
+	
+document.getElementById('alvo')		
+id='alvo'				//coleta elemento com a id especificada
+
+document.createElement('elemento')	//cria elemento especificado
+
+
+///////////////////////Operadores
+nomeObjeto.nomeAtributo			//operador . acessa atributo do objeto	
+
+
+/////////////////Orientação a Objeto
+CLASSE:(cria objetos)
+class ContaBacaria{
+	constructor(){
+		this.agencia = 1075
+		this.conta = 88136
+		this.saldo = 100
+		this.limite = 600
+	}
+	depositar(valorDeposito){
+		this.saldo += valorDeposito
+	}
+	sacar(valorSaque){
+		this.saldo -= valorSaque
+	}
+	consultarSaldo(){
+		return this.saldo
+	}
+}
+
+	
+let cliente1 = new ContaBacaria()
+let cliente2 = new ContaBacaria()
+
+console.log(cliente1.consultarSaldo());
+cliente1.depositar(1000);
+
+console.log(cliente1.consultarSaldo());
+console.log(cliente2.consultarSaldo());
+___________________________________________________________________________________________
+OBJETO LITERAL:(gera apenas um objeto)
+let produtoLiteral = {
+	nome: 'celular',
+	descricao: 'Sansung A10',
+	preco: 999,
+	verDetalhes: function(){
+		console.log(`${this.nome} ${this.descricao} por apenas ${this.preco}`)
+	}
+}
+produtoLiteral.verDetalhes();
+______________________________________________________________________________________
+FUNCAO CONSTRUTORA:(cria objetos com encapsulamento 'var')
+let Carro2 = function(){
+	var velocidadeMaxima = 200//(privado)
+	var kmRodados = 0
+	this.velocidadeAtual = 0//(publico)
+
+	this.acelerar = function(){
+		let velocidade = this.getVelocidadeAtual() + 50
+		if(velocidade > velocidadeMaxima){
+			velocidade = velocidadeMaxima
+		}
+	this.setVelocidadeAtual(velocidade)
+
+	setKmRodados(0.05)
+	console.log(kmRodados)
+	}
+	
+	this.getVelocidadeAtual = function(){
+		return this.velocidadeAtual
+	}
+	
+	this.setVelocidadeAtual = function(velocidadeAtual){
+		this.velocidadeAtual = velocidadeAtual
+	}
+
+	var setKmRodados = function(km){
+	kmRodados += km
+	}
+}
+let ferrari = new Carro2();
+console.log('velocidade: ',ferrari.velocidadeAtual);
+ferrari.acelerar();
+console.log('velocidade: ',ferrari.velocidadeAtual);
+console.log(ferrari);
+
+
+///////////////////

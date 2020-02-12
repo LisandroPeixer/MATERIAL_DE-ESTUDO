@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Funções-Nativas</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+
+		<script>
+
+			//Datas:
+			//Declare a variavel data como instancia do objeto via new Date() 
+			//var data = new Date()
+			//E use metodo get() para data mes e ano
+			var data = new Date()
+			document.write(data.getDate() + '/' + data.getMonth() + '/' + data.getFullYear() + '<br/><br/>')
+			
+			//toString() Converte data para String
+			document.write(data.toString(),'<br/><br/>')
+
+			//set() configura datas
+			data.setDate(data.getDate() + 1)
+			document.write(data.toString(),'<br/>')
+			//ou assim
+			document.write(data.toString(data.setMonth(data.getMonth() + 1)),'<br/>')
+			//escreva	  /para string   /altera +1       /mostre o ano
+			document.write(data.toString(data.setFullYear(data.getFullYear() + 1)),'<br/><br/>')
+			
+			//soma de datas
+			//getTime() transforma datas em milissegundos
+			var date1 = new Date(2017, 0, 15)
+			var date2 = new Date(2017, 5, 25)
+			var tempo = (date2.getTime() - date1.getTime())
+			var dias = (Math.ceil(tempo / (1*24*60*60*1000)))
+			document.write('Date1: ' + date1 + '<br/> Date2: '+ date2 + '<br/> Dias: ' + dias,'<br/><hr/>')
+			//mais opções em: https://www.w3schools.com/jsref/jsref_obj_date.asp
+			//_____________________________________________________________________________________________
+			
+
+			//Matematica: 
+			//Se x = 10.499 e y = 10.501'
+			var x = Math.ceil(10.499)
+			document.write('<br/> Math.ceil() arredonda x para cima= ' + x)
+
+			x = Math.floor(10.499)
+			document.write('<br/> Math.floor() arredonda x para baixo= ' + x)
+
+			x = Math.round(10.499) 
+			var y =Math.round(10.501)
+			document.write('<br/> Math.round() arredonda x y pela proximidade= ' + x,'  ', y)
+
+			var z = Math.random()
+			document.write('<br/>Math.random() gera um numero aleatorio entre 0 e 1= ' + z,'<hr/>')
+			//maiso opções em: https://www.w3schools.com/jsref/jsref_obj_math.asp
+			//_____________________________________________________________________________________
+
+
+			//Strings
+			//considerando a contagem a partir do 0 e os espaços
+			var palavra = 'JavaScript Funções'
+			document.write(palavra,'</br>')
+			document.write(palavra.length,' retorna a quantidade de caracteres <br/>')
+			document.write(palavra.charAt(4),' retorna o caracter posicionado naquele numero </br>')
+			document.write(palavra.indexOf('v'),' retorna a posicao do caracteres daquela palavra <br/>')
+			document.write(palavra.replace('Funções','Linguagem'),' troca palavras <br/>')
+			document.write(palavra.substr(4,5),' apartir do inicio, quantos recupero <br/>')
+			document.write(palavra.toUpperCase(),' caixa alta <br/>')
+			document.write(palavra.toLowerCase(),' caixa baixa <br/>')
+			// mais opções em: https://www.w3schools.com/jsref/jsref_obj_string.asp 
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Arrays</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>	
+		<script>
+
+		//Formas de declarar Arrays (ver no console)
+			var listaMotos = Array()//parenteses declarando indice
+			listaMotos[1] = 'cg'//se não declarar indice, começa com slot 0
+			listaMotos[2] = 'mt'
+			listaMotos[3] = 'xl'
+			listaMotos[4] = 'cb'
+			console.log(listaMotos)
+
+			var listaDePecas = []//colchetes declarando indices
+			listaDePecas[5] = 'porca'
+			listaDePecas[6] = 'parafuso'
+			listaDePecas[7] = 'roda'
+			listaDePecas[8] = 'cambio'
+			console.log(listaDePecas)
+
+			var listaDeFuncionarios = Array('joao', 'jose', 'adriana', 'camila')//parenteses sem declarar indices
+			console.log(listaDeFuncionarios)
+
+			var listaDeCarros = ['fusca', 'opala', 'kombi', 'landau']//colchetes sem declarar indices
+			console.log(listaDeCarros)
+		//Fim de formas de declarar Arrays	
+
+
+		//arrays multidimensionais
+			var listaDeCompras = Array()
+			listaDeCompras['frutas'] = Array()
+			listaDeCompras['frutas'][1]='banana'
+			listaDeCompras['frutas'][2]='maça'
+			listaDeCompras['frutas'][3]='mamao'
+			listaDeCompras['frutas'][4]='laranja'
+			listaDeCompras['carnes'] = Array('tilapia', 'contraFile', 'bisteca', 'frango')
+			//mostra valor do array no browser
+			document.write(listaDeCompras['frutas'], listaDeCompras['carnes'],'</br>')
+			document.write(listaDeCompras['frutas'][3],'</br>',listaDeCompras['carnes'][2],'</br>')
+		//Fim de arrays multidimensionais
+
+		
+		//metodos para incluir e excluir valores dos arrays	
+			//para incluir valores  no final do Array utilizar 
+			listaDeCompras['frutas'].push('abacate')
+			//para incluir valores  no inicio do Array utilizar 
+			listaDeCompras['carnes'].unshift('costela') 
+			//para excluir valores  no final do Array utilizar 
+			listaDeCompras['carnes'].pop()
+			//para excluir valores  no inicio do Array utilizar 
+			listaDeCompras['frutas'].shift() 		
+			document.write(listaDeCompras['carnes'],'</br>')
+		//Fim dos metodos para incluir e excluir valores dos arrays	
+		
+
+		//Metodo para pesquisa no array
+			var consulta = listaDeCompras['frutas'].indexOf(prompt('digite o nome de uma fruta: '))
+			if (consulta == -1){
+				document.write('não temos esta fruta</br>')
+			} else {
+				document.write('está no corredor ', consulta, '</br>')
+			}
+		//fim de Metodo para pesquisa no array
+
+
+		//metodo para ordenação de strings e numeros
+			//strings 
+			document.write(listaDeCompras['carnes'].sort(),'</br>')			
+			//numeros
+			var listaNumeros = Array()
+			listaNumeros[1] = 12
+			listaNumeros[2] = 56
+			listaNumeros[3] = 24
+			listaNumeros[4] = 365
+			listaNumeros[5] = 25
+			listaNumeros[6] = 238
+			listaNumeros[7] = 25
+			listaNumeros[8] = 14
+			listaNumeros[9] = 95
+			listaNumeros[10] =2
+			document.write(listaNumeros.sort(emOrdem),'</br><hr/>')
+				function emOrdem(a, b){
+				 return a - b
+				}
+		//Fim de metodo para ordenação de numeros		
+
+
+		//formula para mostrar parametros dos indices (mostra somente numeros)
+			var carros = Array()
+			carros[5] = 'ferrari'
+		    carros['cd'] = 'lamburguini'
+		    carros[-12] = 'paganni'
+		    carros['xr'] = 'mclaren'
+		    carros[22] = 'bugatti'
+		    var car = function(valor, indice, array){
+				document.write('indice: ' + indice + ' | valor: ' + valor + '<br/><hr/>')
+		    }
+		    carros.forEach(car)
+		    //_____________________________________________________________________________
+
+			//variavel funcionarios recebe arranjo 
+			var funcionarios = ['ana ', 'betina ', 'catia ', 'elena ', 'fernanda ']
+			//mostrar arranjo de funcionarios no console
+			console.log(funcionarios)
+			//para CADA funcionarios usar função com estes parametros
+			funcionarios.forEach(function(valor, indice, array){
+				//escrever no browser parametros da função
+				document.write('indice: ' + indice + ' | valor: ' + valor + '<br/>')
+				//se o parametro valor for igual a 'elena'
+				if(valor == 'elena '){
+					//o parametro array indice receberá 'um novo valor'
+					array[indice] = 'um novo valor '
+				}
+			})	
+			document.write(funcionarios[3])
+			document.write('<br/>' + funcionarios + '<br/><hr/>')
+		//Fim da formula para mostrar parametros dos indices (mostra somente numeros)
+		
+		</script> 
+	</body>
+
+</html>

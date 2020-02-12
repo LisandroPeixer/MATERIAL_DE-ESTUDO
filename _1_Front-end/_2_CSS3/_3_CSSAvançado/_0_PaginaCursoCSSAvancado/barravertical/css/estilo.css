@@ -1,0 +1,43 @@
+/*ul{
+	list-style-type: none;
+	margin:0;
+	padding: 0;
+}
+li{
+	padding: 10px 20px;
+	background: url(../imagens/seta.png) no-repeat left center;
+}*/
+
+ul{
+	margin:0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+ul a {
+	width: 200px;
+	height: 40px;
+	display:block;
+	color: #000;
+	text-decoration: none;
+	text-indent: 40px;
+	line-height: 40px;
+	background: #f7b600 url(../imagens/menu.png) no-repeat left bottom;
+}
+
+a:hover {
+	background-position: right bottom;
+	background-color: #f99200;
+	color: #fff;
+}
+
+/*marcando classe selecionada por: id id classe e elemento*/
+#home #navegacao .home a,
+#sobre #navegacao .sobre a,
+#servicos #navegacao .servicos a,
+#noticias #navegacao .noticias a,
+#contato #navegacao .contato a {
+	background-position: right bottom;
+	background-color: #f99200;
+	color: #fff;
+}

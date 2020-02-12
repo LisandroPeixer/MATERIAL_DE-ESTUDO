@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ARITMETICA</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<!-- concatenação ou soma +
+			 Subtração -
+			 Multiplicação *
+			 Divisão /
+			 Módulo % (resto da divisão)
+			 Incremento ++
+			 Decremento --
+
+			 igual ==
+			 identico ===
+			 diferente !=
+			 não identico !==
+			 menor <
+			 maior >
+			 menor igual <=
+			 maior igual >=
+			 && e
+			 || ou
+			 ! inversão
+			 para isolar as operações das concatenações pode usar o +()+ ou apenas ,,		-->
+
+		<script>		  	
+		  	var num1 = prompt('Digite a variavel 1: ')
+		  	var num2 = prompt('Digite a variavel 2: ')
+
+		  	//para soma, como o valor de + concatena variaveis devesse converter para number via parseInt()
+		  	num1 = parseInt(num1)
+		  	num2 = parseInt(num2)
+
+		  	document.write('A Soma entre ' + num1 + ' e ' + num2 + ' é: ' +(num1 + num2)+ '<br/>')
+		  	document.write('A Subtração entre ' + num1 + ' e ' + num2 + ' é: ', num1 - num2, ' <br/>')
+		  	document.write('A Multiplicação entre ' + num1 + ' e ' + num2 + ' é: '+(num1 * num2)+' <br/>')
+		  	document.write('A Divisão entre ' + num1 + ' e ' + num2 + ' é: ', num1 / num2, ' <br/>')
+		  	document.write('A Módulo entre ' + num1 + ' e ' + num2 + ' é: '+(num1 % num2)+ ' <br/>')
+
+		  	//opções de incremento
+		  	//incremento pós o numero não encrementa na mesma chamada
+		  	document.write('O Incremento de ' ,num1,  ' é: ' ,num1++,' ', num1, '<br/>')
+		  	//incremento pré o numero encrementa na mesma chamada
+		  	document.write('O Decremento de ' , num1, ' é: '+(--num1)+ '<br/><br/>')
+
+
+		  	//atribuindo valores a variaveis
+		  	var teste = 10
+		  	document.write(teste, '<br/>')
+		  	//modo comum
+		  	teste = teste + 3 
+		  	document.write(teste, '<br/>')
+		  	//modo silplificado
+		  	teste += 3
+		  	document.write(teste, '<br/>')
+			teste -= 3
+		  	document.write(teste, '<br/>')
+		  	teste *= 3
+		  	document.write(teste, '<br/>')
+		  	teste /= 3
+		  	document.write(teste, '<br/>')
+		  	teste %= 3
+		  	document.write(teste, '<br/><br/>')
+
+		  	//concatenando strings 
+		  	// para concatenar strings e variaveis use a virgula para separalos e o sinal + entre eles
+		  	var teste1 = 'Carro '
+		  	var teste2 = 'Eletrico '
+
+		  	teste1 = teste1 + teste2
+		  	document.write(teste1, '<br/>')
+
+		  	/* precedencia de operações
+		  	/* 1º multiplicações
+		  	/* 2º divisões
+		  	/* 3º soma
+		  	/* 4º subtrações
+		  	/* para corrigir use +()+ ou ,, isolando as operações	*/		  	
+		</script>
+	</body>
+
+</html>

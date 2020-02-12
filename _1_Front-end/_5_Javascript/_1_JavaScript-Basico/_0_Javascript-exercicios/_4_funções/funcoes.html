@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Funções</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+
+		<script>
+		//Tipos de funcões
+			//return: retorna o valor de area para a função calcularAreaTerreno
+			function calcularAreaTerreno(largura, altura){
+				var area = largura * altura
+				return area
+			}
+			document.write('Area do tereno é: ' + calcularAreaTerreno(10, 10) + '<br/>')
+		
+			//void: não tem retorno e valor de area fica na variavel apenas
+			function calcularVelocidade(tempo, distancia){
+				var velocidade = distancia / tempo
+				document.write('A velocidade foi de: ' + velocidade, '<br/>')
+			}
+			calcularVelocidade(2, 100)
+
+			//funcoes anonimas
+			//wrapper = quando uma variavel recebe o resultado de uma funcao anonima
+			var exibirSaudacao = function(nome){
+				document.write('Olá '+ nome +" tudo bem?")
+			}
+			exibirSaudacao('Estalinslau Abramovicz')
+		//Fim de Tipos de funcões			
+
+
+		//flexibilidade de funções (ver no console)
+			//não permitem erro nestes casos de variaveis a menos ou a mais,
+			function somaValores(a, b){
+				return a + b
+			}
+			console.log(somaValores(5, 3))
+			console.log(somaValores(5, 3, 4, 6))//desconsidera os demais
+			console.log(somaValores(5))//retorna not a number NAN
+
+			function multiplicaValores(a, b){
+				b = b === undefined ? 1 : b//trata de variaveis undefined
+				return a * b
+			}
+			console.log(multiplicaValores(5, 3))
+			console.log(multiplicaValores(5))
+		//Fim de flexibilidade de funções
+	
+
+		//parametros variaveis 'arguments' 
+			//percorre array em funções 
+			//bom para percorrer atributos de objetos!!!! (veja no console)			
+			function mostrar(){
+				console.log(arguments)
+			}
+			mostrar(7, 5, 3.2, 500)
+
+
+			function soma(){
+				var resultado = 0
+				for(var i in arguments){			//percorrer todos os argumentos declarados
+					//console.log(arguments[i])
+					resultado += arguments[i]		//resultado recebe soma dos argumentos
+				}
+				return resultado
+			}
+			console.log(soma(2, 15, 45.9, 158, ' soma dos valores' ))
+		//Fim de parametros variaveis 'arguments'
+				
+		</script>
+	</body>
+
+</html>

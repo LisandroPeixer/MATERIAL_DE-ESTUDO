@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>JQuery</title>
+	
+	<meta charset="utf-8">
+	<!--<script src="jquery-3.4.1.min.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous">
+	</script>
+
+	<script>
+		
+		$(document).ready(()=>{
+
+			$('#lista1').prepend('<li>item 0</li>')
+			$('#lista1').append('<li>item 4</li>')
+
+			//inspecione o elemento para ver o exercicio
+			$('#lista2').before('<p>inserido antes a div</p>')
+			$('#lista2').append('<p>inserido dentro da div</p>')
+			$('#lista2').after('<p>inserido apos a div</p>')
+
+			//modifica conteudo da tag com o id
+			$('#elemento1').html('<h1>outro elemento</h1>')
+
+			//remove conteudo da tag com o id
+			$('#elemento2').remove()
+
+		})
+
+	</script>
+</head>
+<body>
+
+	<ul id="lista1">
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+	</ul>
+
+	<div id="lista2">
+		<div>Item 1</div>
+		<div>Item 2</div>
+		<div>Item 3</div>
+	</div>
+
+	<div id='elemento1'>Elemento</div>
+
+	<hr/ id='elemento2'>
+
+</body>
+
+</html>

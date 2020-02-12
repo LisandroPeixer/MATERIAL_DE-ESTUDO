@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CALCULADORA ARITMETICA</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<script>
+
+			//simples
+			/*var num1 = prompt('Digite um numero: ')	
+			num1 = parseFloat(num1)
+
+			var operacao = prompt(' +, -, * ou /')
+
+			var num2 = prompt('Digite outro numero: ')
+			num2 = parseFloat(num2)
+
+			var resultado = null
+				
+			if (operacao == '+') {resultado = num1 + num2}	
+			if (operacao == '-') {resultado = num1 - num2}	
+			if (operacao == '*') {resultado = num1 * num2}	
+			if (operacao == '/') {resultado = num1 / num2}	
+			document.write(resultado)  	*/
+
+			//função
+			var valor1 = prompt('Digite um valor: ')
+			var sinal = prompt(' +, -, * ou /')
+			var valor2 = prompt('Digite outro valor: ')
+
+			function calcular(valor1, valor2, sinal){
+				valor1 = parseFloat(valor1)
+				valor2 = parseFloat(valor2)
+
+				var total = 0
+
+				if (sinal == '+') {total = valor1 + valor2}
+				if (sinal == '-') {total = valor1 - valor2}
+				if (sinal == '*') {total = valor1 * valor2}
+				if (sinal == '/') {total = valor1 / valor2}
+
+				return total
+			}		
+			document.write(calcular(valor1, valor2, sinal))
+
+		</script>			
+	</body>
+
+</html>

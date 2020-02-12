@@ -1,0 +1,30 @@
+
+/*Sombras
+caixas = https://www.w3schools.com/cssref/css3_pr_box-shadow.asp
+textos = https://www.w3schools.com/cssref/css3_pr_text-shadow.asp
+*/
+
+#caixaSombra{
+	width: 300px;
+	height: 300px;
+	padding: 8px;
+	margin: 20px;
+	background: #009660;
+	box-shadow: 20px 20px 20px black; /*aplica sombra no elemento*/
+}
+#caixaSombra h1{
+	color: black;
+	text-shadow: -5px 5px #fff; /*aplica sombra no texto*/
+}
+#caixaSombra h2{
+	color: black;
+	text-shadow: -5px 5px 5px rgba(0, 0, 0, 0.6); /*opacidade em sombra borrada*/
+}
+
+#caixaSombra2{
+	width: 300px;
+	height: 300px;
+	padding: 8px;
+	margin: 120px;
+	background: #009660;
+	box-shadow: 0px 0px 0px 80px black;/*spread= espalha sombra*/

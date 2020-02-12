@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - Encapsulamento com funcoes construtoras de Objetos</title>
+		<meta charset="utf-8">
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+	</head>
+
+	<body>
+		<!--corrigir syntax em: view/syntax/html underscore-->	
+		<script type="text/babel">
+		
+		console.log('vectra com limitador apenas')
+		//declarando a classe carro com controle de velocidade
+			//sem encapsular o atributo velocidade maxima(não é correto)
+			let Carro = function(){
+				//declarando atributos 
+				this.ano = 2000
+				this.cor = 'branco'
+				this.modelo = 'sedan'
+				this.velocidadeAtual = 0
+				this.velocidadeMaxima = 200
+				//declarando o metodo acelerar como atributo da classe
+				this.acelerar = function(){
+					//logica da funcao
+					//pega a velocidade atual e acrescenta 50
+					let velocidade = this.getVelocidadeAtual() + 50
+					//se a velocidade utrapassar a velocidade maxima a velocidade recebera o valor da velocidade maxima (não ultrapasse a velocidade maxima)
+					if(velocidade > this.velocidadeMaxima){
+						velocidade = this.velocidadeMaxima
+					}
+					this.setVelocidadeAtual(velocidade)
+				}
+				//metodo get
+				this.getVelocidadeAtual = function(){
+					return this.velocidadeAtual
+				}
+				//metodo set
+				this.setVelocidadeAtual = function(velocidadeAtual){
+					this.velocidadeAtual = velocidadeAtual
+				}
+			}
+			//declarando objeto vectra
+			let vectra = new Carro();
+			console.log(vectra.velocidadeAtual);
+			//acelerando a 50km/h
+			vectra.acelerar();
+			console.log(vectra.velocidadeAtual);
+			//acelerando a 100km/h
+			vectra.acelerar();
+			console.log(vectra.velocidadeAtual);
+			//acelerando a 150km/h
+			vectra.acelerar();
+			console.log(vectra.velocidadeAtual);
+					//usando acesso a atributo para alterar limitador
+					vectra.velocidadeMaxima = 400
+			//acelerando a 200km/h
+			vectra.acelerar();
+			console.log(vectra.velocidadeAtual);
+			//acelerando a 250km/h
+			vectra.acelerar();
+			console.log(vectra.velocidadeAtual);
+			//acelerando a 300km/h
+			vectra.acelerar();
+			console.log(vectra.velocidadeAtual);
+			//mostraria apenas 200km/h por causa do if limitador mas como o acesso alterou o limite 
+
+			console.log('ferrari com limitador e encapsulamento');
+
+		//declarando a classe carro encapsulando o atributo velocidade maxima como variavel de funcao
+			let Carro2 = function(){//isolando atributo como variavel de funcao não é possivel acessar e alterar seu valor (não use this)
+				var velocidadeMaxima = 200
+				var kmRodados = 0
+				//declarando atributos 
+				this.ano = 2000
+				this.cor = 'branco'
+				this.modelo = 'esportivo'
+				this.velocidadeAtual = 0
+				//declarando o metodo acelerar
+				this.acelerar = function(){
+					//logica da funcao
+					//pega a velocidade atual e acrescenta 50
+					let velocidade = this.getVelocidadeAtual() + 50
+					//se a velocidade utrapassar a velocidade maxima a velocidade recebera o valor da velocidade maxima (não ultrapasse a velocidade maxima)
+					if(velocidade > velocidadeMaxima){
+						velocidade = velocidadeMaxima
+					}
+					this.setVelocidadeAtual(velocidade)
+			//metodo privado como variavel de funcao
+					setKmRodados(0.05)
+					console.log(kmRodados)
+				}
+				//metodo get
+				this.getVelocidadeAtual = function(){
+					return this.velocidadeAtual
+				}
+				//metodo set
+				this.setVelocidadeAtual = function(velocidadeAtual){
+					this.velocidadeAtual = velocidadeAtual
+				}
+			//metodo privado como variavel de funcao (não use this)
+				var setKmRodados = function(km){
+					kmRodados += km
+				}
+			}
+			//declarando objeto vectra
+			let ferrari = new Carro2();
+			console.log(ferrari.velocidadeAtual);
+			//acelerando a 50km/h
+			ferrari.acelerar();
+			console.log(ferrari.velocidadeAtual);
+			//acelerando a 100km/h
+			ferrari.acelerar();
+			console.log(ferrari.velocidadeAtual);
+			//acelerando a 150km/h
+			ferrari.acelerar();
+			console.log(ferrari.velocidadeAtual)
+					//usando acesso a atributo para alterar limitador
+					//mesmo com este recurso não é possivel acessar o atributo
+					ferrari.velocidadeMaxima = 400
+			//acelerando a 200km/h
+			ferrari.acelerar();
+			console.log(ferrari.velocidadeAtual);
+			//acelerando a 250km/h
+			ferrari.acelerar();
+			console.log(ferrari.velocidadeAtual);
+			//acelerando a 300km/h
+			ferrari.acelerar();
+			console.log(ferrari.velocidadeAtual);
+			//mostra apenas 200km/h por causa do if limitador e com encapsulamento
+
+			console.log(vectra);
+			console.log(ferrari);
+		</script>		
+	</body>
+</html>

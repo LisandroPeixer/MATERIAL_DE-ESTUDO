@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - OO x Procedural</title>
+		<meta charset="utf-8">
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+
+	<body>
+		<!--corrigir syntax em: view/syntax/html underscore-->
+		<script type="text/babel">
+
+		//modelo de classe procedural (verboso)	
+			let cadeiras = Array()
+			
+			//Array - Nesta parte são declarados os atributos da classe (o que ela tem)
+			cadeiras[0] = Array()
+			cadeiras[0]['qtd pernas'] = 4
+			cadeiras[0]['giratoria'] = 	false
+			cadeiras[0]['cor'] = 'verde'
+
+			cadeiras[1] = Array()
+			cadeiras[1]['qtd pernas'] = 1
+			cadeiras[1]['giratoria'] = 	true
+			cadeiras[1]['cor'] = 'amarela'		
+
+		//funcões - Nesta parte são declarados os metodos da classe (o que ela faz)
+			function girarCadeira(indice){
+				if(cadeiras[indice]['giratoria']){
+					console.log('girou')
+				} else{
+					console.log('não gira')
+				}
+			}
+			girarCadeira(0)
+			girarCadeira(1)
+		
+		//instanciação - Nesta parte são declarados os objetos originados da classe
+			function adicionarCadeira(qtdPernas, giratoria, cor){
+				let cadeira = Array()
+
+				cadeira['qtdPernas'] = 3
+				cadeira['giratoria'] = 	false
+				cadeira['cor'] = 'azul'
+
+				cadeiras.push(cadeira)
+			}
+			adicionarCadeira(3, false, 'azul')
+
+			console.log(cadeiras)
+			girarCadeira(2)
+
+//_____________________________________________________________________________________________________	
+
+		//modelo de classe orientado a objeto (parece receita de bolo)
+			class Cadeira{
+				//RECEITA - Nesta parte são declarados os atributos da classe (o que ela tem)
+				constructor(qtdPernas, giratoria, cor){
+					this.qtdPernas = qtdPernas
+					this.giratoria = giratoria
+					this.cor = cor
+				}
+				//MODO DE PREPARO - Nesta parte são declarados os metodos da classe (o que ela faz)
+				girarCadeira(){
+					if(this.giratoria === true){
+						console.log('girou')
+					} else {
+						console.log('não gira')
+					}
+				}
+			}	
+
+		//SABORES DISPONIVEIS - Nesta parte são declarados os objetos originados da classe
+			let cadeira1 = new Cadeira(4, false, 'verde')
+			let cadeira2 = new Cadeira(1, true, 'amarela')
+			let cadeira3 = new Cadeira(3, false, 'azul')
+
+			console.log(cadeira1);
+			cadeira1.girarCadeira();
+
+			console.log(cadeira2);
+			cadeira2.girarCadeira();
+
+			console.log(cadeira3);
+			cadeira3.girarCadeira();
+		
+		</script>
+	</body>
+</html>

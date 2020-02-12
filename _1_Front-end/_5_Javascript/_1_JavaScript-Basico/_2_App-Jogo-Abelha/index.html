@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bem vindo!!!</title>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+
+		<link rel="stylesheet" type="text/css" href="estilo.css" />
+
+		<script>
+			function iniciarJogo(){// 10º - declarar funcao iniciarJogo
+				var nivel = document.getElementById('nivel').value//variavel nivel recebe valor do elemento por id='nivel' 
+
+				if(nivel === ''){//se o nivel selecionado tiver valor vazio
+					alert("Selecione um nivel para iniciar o jogo")//emita alerta com a mensagem
+					return false //retorne falso para que a funcao continue ate selecionar um nivel com valor valido
+				}
+				window.location.href = "app.html?" + nivel //seleciona a pagina do game + o nivel escolhido 
+			}
+		</script>
+	</head>
+
+	<body><!--7° fim de jogo-->
+
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="d-flex justify-content-center"> <!--comando bootstrap para alinhamento de imagem-->
+						<img src="imagens/game.png" />		
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="d-flex justify-content-center"> <!--comando bootstrap para alinhamento de imagem-->
+						<div class="mb-2">
+							<select class="form-control" id="nivel"> <!--Id='nivel' serve de chave para função-->
+								<option value="">Selecione o Nivel</option>
+								<option value="Normal">Normal</option>
+								<option value="Dificil">Dificil</option>
+								<option value="Chuck_Horris">Chuck Norris</option>
+							</select>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="d-flex justify-content-center"> <!--comando bootstrap para alinhamento de imagem-->
+						<button type="button" class="btn btn-danger btn-lg" onclick="iniciarJogo()">Iniciar Jogo</button><!--onclick='iniciarJogo' liga acionar o botao com a funcao 10ª declarada no head-->
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

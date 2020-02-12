@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ECMAScript6 - funcoes com parametro default</title>
+		<meta charset="utf-8">
+		<!--para incluir o babel ver no link:   https://babeljs.io/setup#installation-->
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+
+	<body>
+		<div id="output"></div>
+
+		<!--corrigir syntax em: view/syntax/html underscore-->
+		<script type="text/babel">
+
+		//metodo undefined (sem declarar default)
+			function cadastroUsuario(nome, Telefone, email, Endereco){
+				document.write(`
+					Nome: ${nome}
+					Telefone: ${Telefone}
+					email: ${email}
+					Endereço: ${Endereco}
+					<br/>`)
+			}
+			cadastroUsuario();
+
+		//metodo 1 (declarando default)
+			function cadastroUsuario1(nome = 'Pedro Coelho', Telefone = '(48)99999-8888', email = 'pedro@gmail.com', Endereco = 'Geral S/N'){
+				document.write(`
+					Nome: ${nome}
+					Telefone: ${Telefone}
+					email: ${email}
+					Endereço: ${Endereco}
+					<br/>`)
+			}
+			cadastroUsuario1();
+		//metodo 2
+			function cadastroUsuario2(nome, Telefone, email, Endereco){
+				document.write(`
+					Nome: ${nome}
+					Telefone: ${Telefone}
+					email: ${email}
+					Endereço: ${Endereco}
+					<br/>`)
+			}
+			cadastroUsuario2('Paula Pereira', '(48)98888-7777', 'paula@gmail.com', 'Geral S/N');
+
+		//metodo 4 neste metodo os valores são hedados dos paramentros default da funcao
+			function cadastroUsuario4(nome = 'claudia souza', Telefone = '(48) 77777-5555', email = 'claudia@gmail.com', Endereco = 'Geral s/n'){
+				document.write(`
+					Nome: ${nome}
+					Telefone: ${Telefone}
+					email: ${email}
+					Endereço: ${Endereco}
+					<br/>`)
+			}
+			cadastroUsuario4(undefined, undefined, undefined, undefined);
+		</script>
+	</body>
+</html>

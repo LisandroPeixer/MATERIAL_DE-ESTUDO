@@ -1,0 +1,434 @@
+COMANDOS bootstrap:
+
+///////////ESTRUTURA DE SITES
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+
+	<style type="text/css">
+		tag css
+	</style>
+
+	<script type="text/javascript">
+		tag javascript
+	</script>
+
+	<?php>
+		tag php
+	</?>
+</head>
+<body>
+
+	<header></header>		 //cabeçalhos
+	<nav></nav>			 //navegador
+	<section></section>		 //seçao
+	<aside></aside>		 	 //lateral
+	<ul><li></li></ul>		 //listas
+	<table><tr><td></td></tr></table>//tabelas
+	<footer></footer>		 //rodape
+
+</body>
+</html>
+
+///////////ALINHAMENTO RESPONSIVO 
+
+Media types
+PARA DEFINIR MIDIAS NO LINK CSS defina conforme abaixo:
+<link rel="stylesheet" type="text/css" media="NOME DA MIDIA" href="PAGINA DE CONFIGURACAO.css">
+
+media query
+///////////////////////BREAK POINTS
+<style type="text/css">
+@media (min-width: 576px) {	body{background: red;}		}
+@media (min-width: 768px) {	body{background: blue;}		}
+@media (min-width: 992px) {	body{background: black;}	}
+@media (min-width: 1200px) {	body{background: green;}	}
+
+@media (max-width: 575px) {	body{background: yelow;}	}
+@media (max-width: 767px) {	body{background: red;}		}
+@media (max-width: 991px) {	body{background: blue;}		}
+@media (max-width: 1199px) {	body{background: black;}	}
+
+@media (min-width: 576px) and (max-width: 1199px) {	body{border: 1px solid gray}	}
+</style>
+
+SM >=576px			//celular
+MD >=768px			//tablet
+LG >=992px			//computador
+XG >=1200px			//tv
+
+class="text-sm-right";		//no celular alinhar a direita
+text-md-right			//no tablet alinhar a direita
+text-lg-right			//no pc alinhar a direita
+text-xg-right			//na tv alinhar a direita
+	
+class="float-sm-right";		//no celular flutuar a direita
+float-md-right			//no tablet flutuar a direita
+float-lg-right			//no pc flutuar a direita
+float-xg-right			//na tv flutuar a direita
+
+
+///////////////////GRIDS
+class="container"	//utilizado para agrupar todos os conteudos
+class="container-fluid"	//agrupa todos os conteudos ocupando toda a tela
+	
+class="row"		//na div mae cria o sistema de colunas
+
+col-12			//na div filha define todas as colunas tela cheia
+col			//define area fixa
+col-sm-2	
+col-sm-10		//divide colunas na proporção pra 12 sm/md/lg/xg
+
+order-1			//altera as ordens de sequencia 
+col-sm-2 offset-sm-5	//centraliza botoes
+
+align-items-center	//alinhamento vertical div end/center/start
+align-self-start	//alinhamento vertical individual
+justify-content-end	//alinhamento horizontal 
+justify-content-around	//alinha de forma equalizada around/between
+no-gutters		//remove espaçamentos
+
+class="img-fluid"	//controla tamanho de imagens 
+
+<style type="text/css">
+.marcador{background:#fe9d9d;border:1px solid #f94646;}
+.marcador-container{background:#5bf946;border:1px solid #36ae26;}
+</style>
+
+class="marcador"
+class="marcador.container"	//nas <div> utilizar essas classes para visualizar as colunas
+borda				//cria borda na div
+
+
+///////////////FLEXBOX
+class="d-flex"		//ativa a classe flexbox na div mae
+class="item"		//ativa a classe na div filha
+
+flex-row		//div em linha
+flex-column		//div em coluna
+flex-row-reverse	//div em linha inversa
+justify-content-end	//alinhamento horizontal end/center/start/around/between
+align-items-center	//alinhamento vertical div end/center/start/baseline/stretch
+align-self-start	//alinha items da div end/center/start/baseline/stretch
+flex-wrap		//empurra elementos para a linha de baixo
+flex-nowrap		//mantem elementos e cria rolagem da barra
+d-none d-md-block	//tira elemento de tela 			
+
+/////////////MARGENS
+class="mt-1";	//margem de fora topo
+ml-2		//margem de fora esquerda
+mr-3		//margem de fora direita
+mb-4		//margem de fora fundo
+mx-5		//margem de fora horizontal
+my-2		//margem de fora vertical
+m-3		//margem de fora todos os lados
+ml-auto		//empurra elemento para direita
+ml-auto mr-auto	//centraliza elementos horizontal
+mt-auto		//empurra elemento para baixo
+mt-auto mb-auto //centraliza na vertical
+
+class="pt-1";	//margem de dentro topo
+pl-2		//margem de dentro esquerda
+pr-3		//margem de dentro direita
+pb-4		//margem de dentro fundo
+px-5		//margem de dentro horizontal
+py-2		//margem de dentro vertical
+p-3		//margem de dentro todos os lados
+
+
+//////////////////CORES
+class="bg-primary";	//cor de fundo azul
+bg-secundary		//cor de fundo cinza
+bg-success		//cor de fundo verde
+bg-info			//cor de fundo piscina
+bg-warning		//cor de fundo amarelo
+bg-danger		//cor de fundo vermelho
+bg-light		//cor de fundo cinzaclaro
+bg-dark			//cor de fundo preto
+bg-white		//cor de fundo branco
+bg-black-50		//cor de fundo quase preto
+bg-white-50		//cor de fundo quase branco
+bg-transparent		//cor de fundo transparente
+
+
+/////////////////BLOCO OU LINHA						
+class="d-inline";		//elementos em linha (nao aceita margem)
+d-block				//elementos em bloco (aceita margem mas não fica em linha
+d-inline-block			//elementos hibridos (aceitam margem e ficam em linha)
+
+
+/////////////////FLUTUAR ELEMENTOS
+class="float-left";		//flutuar a esquerda
+float-right			//flutuar a direita
+clearfix			//usar no elemento pai para corrigir flutuacao
+
+
+///////////FIXAR/COLAR ELEMENTOS
+fixed-top			//fixar no topo
+fixed-botton			//fixar no fundo
+sticky-top			//colar no topo
+
+
+////////////tamanhos e bordas
+class-"w-25";		//largura em 25% 
+w-50			//largura em 50% 
+w-75			//largura em 75% 
+w-100			//largura em 100% 
+w-auto			//largura automatica
+
+class-"h-25";		//altura em 25% 
+h-50			//altura em 50% 
+h-75			//altura em 75% 
+h-100			//altura em 100% 
+h-auto			//altura automatica
+
+class="jumbotron";	//coloca elementos em destaque
+container		//agrupa elementos
+align-self-center	//centraliza imagem em container
+
+class="border";			//todas as bordas
+border-top			//borda acima
+border-bottom			//borda abaixo
+border-left			//borda esquerda
+border-rigth			//borda direita
+border border-success		//para adicionar cor nas bordas
+border rounded			//arredonda bordas
+border w-25 rounded-circle	//faz circulo
+
+class="img-fluid"		//controla tamanho de imagens 
+
+///////////TEXTOS
+class="h1";		//cabeçalho
+display-1		//display
+lead			//paragrafo
+blockquote		//citacao
+blockquote-footer	//primeira maiuscula
+font-weight-bold	//negrito
+font-weight-normal	//normal
+font-italic		//italico
+
+text-uppercase		//todas maiusculas	
+text-lowercase		//todas minuscilas
+text-capitalize		//primeira maiuscula	
+text-right		//alinhar direita	
+text-left		//alinhar esquerda	
+text-center		//centralizar
+text-justify		//justificar texto
+text-truncate		//encolhe texto
+text-monospace		//texto de maquina
+
+text-primary		//azul (cores para textos e links)
+text-secundary		//cinza
+text-success		//verde
+text-info		//piscina
+text-warning		//amarelo
+text-danger		//vermelho
+text-light		//cinzaclaro
+text-dark		//preto
+text-white		//branco
+text-black-50		//quase preto
+text-white-50		//quase branco
+	
+
+list-unstyled		//retira marcador de listas
+list-inline		
+list-inline-item	//coloca lista em linha por item			
+
+
+/////////////BOTOES
+class="btn"; type="button"	//classe padrao (transforma varias tags em botao)
+btn btn-primary			//cores
+btn btn-link			//simula link em botao
+btn btn-outline-info		//contorno
+btn btn-lg			//tamanho sm(pequeno), lg(grande) ou block(para apps)
+btn btn-primary	active		//active disabled (altera cores)
+class="btn-group"		//ativa grupos de botoes na tag de agrupamento
+class="btn-group-vertical"	//ativa grupos de botoes na tag de agrupamento vertical
+class="btn-toolbar"		//agrupa agrupamentos de botoes
+
+
+//////////////////////////BOTOES DROPDOWN
+<div class="dropdown mb-1">
+  <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" type="button">
+    Clique
+  </button>
+  <div class="dropdown-menu">
+    <a href="#" class="dropdown-item">link1</a>
+    <div class="dropdown-divider"></div>
+      <a href="#" class="dropdown-item">link2</a>
+      <a href="#" class="dropdown-item">link3</a>
+    </div>
+  </div>			//botoes especiais									
+
+//////////////////NAVEGAÇÃO 
+https://getbootstrap.com/docs/4.0/components/navs/ 
+class="nav"			//padrao na <ul>
+class="nav-item"		//lista
+class="nav-link"		//link
+
+nav nav-pills			//<ul>
+nav-link active			//no link destaca o item
+
+nav nav-tabs			//<ul>navegação com tabs
+nav-link active			//no link destaca o item
+
+justify-content-center		//<ul>alinha ao centro
+justufy-content-end		//<ul>alinha a direita
+
+flex-column			//<ul>navegação em colunas
+disabled			//deixa link inativo
+
+data-toggle="collapse"		//esconde itens hamburger
+data-toggle="dropdown"		//esconde itens dropdown
+
+
+////////////BARRA DE NAVEGACAO SIMPLES
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+	<a href="#" class="navbar-brand">principal</a>
+	<ul class="navbar-nav ml-auto">
+		<li class="nav-item">
+			<a href="#" class="nav-link">link1</a>
+		</li>
+		<li class="nav-item">
+			<a href="#" class="nav-link">link2</a>
+		</li>
+		<li class="nav-item">
+			<a href="#" class="nav-link">link3</a>
+		</li>
+	</ul>	
+</nav>	//
+
+
+////////////BARRA DE NAVEGACAO RESPONSIVA
+<nav class="navbar navbar-expand-sm navbar-dark bg-success">
+  
+  <!--logo-->
+  <a href="#" class="navbar-brand">principal</a>
+  
+  <!--menu hamburger-->
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <!--botoes-->
+  <div class="collapse navbar-collapse" id="nav-target">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a href="#" class="nav-link">link1</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">link2</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">link3</a>
+      </li>
+    </ul> 
+  
+    <!--formulario-->
+    <form class="form-inline">
+      <input type="text" name="" class="form-control" placeholder="Pesquisar...">
+      <button class="mt-1 btn btn-outline-light">ok</button>
+    </form> 
+  </div>
+</nav>
+
+
+//////////////CARD GROUP
+
+<div class="card-columns"><!--inicio do mostruario-->
+
+  <!--cartao-->
+      <div class="card">
+        <h3>Caixas de Presente</h3> 
+          <img class="card-img-bottom" src="https://jpembalagens.s3-sa-east-1.amazonaws.com/prod1.jpg">
+        <div class="card-body">
+          <h6 class="card-subtitle">Caixa 30x30cm</h6>
+          <p class="card-text">1 pacote com 100un.</p>
+          <h4 class="card-title">R$ 70,00</h4>
+          <a class="btn btn-outline-primary" href="">adicionar ao carrinho</a>
+        </div> 
+      </div> 
+
+  <!--cartao-->
+      <div class="card">
+        <h3>Papeis de Presente</h3> 
+          <img class="card-img-bottom" src="https://jpembalagens.s3-sa-east-1.amazonaws.com/prod2.jpg">
+        <div class="card-body">
+          <h6 class="card-subtitle">Folha 50x60cm</h6>
+          <p class="card-text">1 pacote com 500un.</p>
+          <h4 class="card-title">R$ 50,00</h4>
+          <a class="btn btn-outline-primary" href="">adicionar ao carrinho</a>
+        </div> 
+      </div> 
+
+</div><!--final do mostruario-->
+
+//////////////////FORMULARIOS
+class="form-group"		//espaços entre <div> s
+form-control			//campos em bloco
+form-control-lg			//campo maior sm(menor)
+form-control-file		//seleciona arquivos
+form-inline			//coloca elementos em linha no formulario
+
+readonly			//campo cinza
+
+class="custon-file"
+custom-file-label
+custom-file-input		//selecionar arquivos
+
+
+///////////////////agrupamanetos de campos
+class="input-group"		//agrupar elementos na <div>
+class="input-group-prepend"	//antes do campo
+class="input-group-text"	//no elemento de texto<span>
+class="input-group-append"	//depois do campo
+
+
+//////////ICONES
+<link href="iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+class="oi oi-bolt"			//icone de raio
+oi-trash				//lixeira
+oi-bell					//sino
+oi-clock				//relogio
+
+<link rel="icon" href="nomeDoIcone.png">//colocar icone no head
+
+
+
+
+///////////ESTILOS
+<style=" "> 			//abre o comando na tag
+margin: 100px; 			//define margem de fora
+margin: 0 auto;			//centralizado
+padding: 100px;			//define margem de dentro
+widith: 100px;			//largura
+background: red;		//cor de fundo
+color: blue;			//cor de texto
+type: checkbox;			//selecionador caixa
+type: radio;			//selecionador bola
+linear-gradient(50deg,#000000)	//degradee
+url(link.png)			//endereço de imagens
+background-Attachment: fixed;	//fixa fundo
+background: rgba(0,0,0,0.6);	//opacidade em cor
+:hover				//muda quando passa o mouse
+text-align: center;		//centraliza conteudo
+font-weight: 900;		//tamanho de fonte
+letter-spacing: -0.5em;		//espaçamento de letras
+font-family: helvetica,Arial,sans-serif;	//fonte especial
+fint-size: 5em			//tamanho da fonte em(proporcional)
+border-radius: 500px;		//borda arredondada -webkit- -moz- (padrao browser)
+text-transform: uppercase;	//texto maiusculo
+transition: background 0.4s, color 0.4s;	//muda ao passar o mouse
+transform: rotate(30deg);	//rotacionar conteudo diaginal -webkit- -moz- (padrao browser)
+overflow-x: hidden;		//esconde barra de rolagem horizontal
+overflow: scrool		//esconde barra de rolagem
+position: relative;		//coloca elemento sobre os demais
+text-decoration: none;		//tira sobrescritos de textos
+list-style: none;		//tira marcador de listas
+float: right;			//flutuar elementos para a direita(lista em linha)
+
+footer p a{	}		//seleciona elemento dentro de elemento

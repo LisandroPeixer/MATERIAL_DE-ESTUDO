@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>JQuery</title>
+	
+	<meta charset="utf-8">
+	<!--<script src="jquery-3.4.1.min.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous">
+	</script>
+
+	<script>
+		/*teste estes comandos no console
+		$('#div1').html('mudando o conteudo')
+		$('#div1').html('<strong>mudando o conteudo</strong>')
+		$('#div1').html('<strong style="color:blue" >mudando o conteudo</strong>')
+		$('#div1').text('<strong style="color:blue" >mudando o conteudo</strong>') 		*/
+		
+		$(document).ready(()=>{
+
+			console.log($('#div1').html())
+
+		})
+
+	</script>
+</head>
+<body>
+
+	<div id="div1" style="border: solid 1px red; width: 150px; height: 150px ">
+		<h3>teste</h3>
+		<p>este e um teste</p>
+		<a href="#">clique aqui</a>
+	</div>
+
+	<div id="div2" style="border: solid 1px red; width: 150px; height: 150px ">div 2</div>
+
+</body>
+
+</html>

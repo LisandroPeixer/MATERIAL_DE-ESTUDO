@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Agnetha';
+    src: url('Agnetha.woff2') format('woff2'),
+        url('Agnetha.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

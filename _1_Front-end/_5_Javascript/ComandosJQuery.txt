@@ -1,0 +1,74 @@
+COMANDOS JQUERY
+/////////////APLICANDO A API
+COM ARQUIVO:
+<!--<script src="jquery-3.4.1.min.js"></script>-->
+VIA LINK:
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous">
+//ver no link: https://jquery.com/download/	
+//O comando para selecionar elementos do JQUERY é: $(' ') 
+
+ 
+//////////////////FORMAS DE SELEÇÃO
+$('tag')		//selecao por tag
+$('.class')		//por class
+$('#id')		//por id
+$('tag.class')		//selecao por tag e class
+$('.class .class')	//Class pai/filho
+$('tag.class .class')	//selecao por tag e class pai/filho
+$('.class:first')	//array de retorno sobre elemento ( :first :even :odd(impares) :last)
+
+
+//////////////////////RESOLVENDO EXECUÇÃO DO SCRIPT
+JAVASCRIPT:		
+<body onload = "function()"/>			//controla o tempo de execução via javascrip
+window.onload = function(){	}		//outra forma igual
+_________________________________________________________________________________________________
+JQUERY 
+$(document).ready(()=>{	coloque aqui tudo })	//Somente aplicar quando o html estiver carregado
+$(function(){	}')				//JQUERY selecionando função
+
+
+////////////////////////////////////////INSERINDO ELEMENTOS
+$('ul').append('<li>hello word!!!</li>')		//insere elemento no final da lista
+$('ul').prepend('<li>hello word!!!</li>')		//insere elemento no inicio da lista
+$('ul').after('<p>hello word!!!</p>')			//insere elemento depois da lista
+$('ul').before('<h1>hello word!!!</h1>')		//insere elemento antes da lista
+$('ul').remove()					//remove elemento
+$('#topo').css('background-color', '#155661')		//insere CSS
+$('input').addClass('campo')				//adiciona class
+$('textarea').removeClass('erro')			//remove class
+$('input').hasClass('campo')				//verifica se tem class (retorna true/false)
+
+if($('input').hasClass('campo')) {
+	alert('temos um campo com erro')
+	} 						//verificação com condicional e alert
+
+
+/////////////////////NAVEGANDO ELEMENTOS
+$('.secao1').parent()				//Acessa elemento pai (sobe um nivel)
+$('#subsecao').closest('#pagina')		//Sobe ao nivel declarado
+$('#rodape').find('p') 				//desce um nivel ou nivel declarado
+
+
+///////////////////EVENTOS
+$('#onload').html('pagina carregada!!!')		//Carregamento	
+
+$(window).scroll(()=>{
+	$('#scroll').html('scroll acionado!!!')
+	})						//Rolando a pagina
+	
+$(window).resize(()=>{
+	$('#resize').html('resize configurado!!!').css('background-color', 'red')
+	})						//alterando o tamanho do browser
+
+
+//////////////////////METODOS
+$('').html('<span>hello word!!!</span>')		//recupera() ou insere('conteudo') na tag
+$('').attr('value')					//acessa atributos da tag
+$('').text('hello word!!!')				//insere texto puro na tag
+$('').val()						//recupera ou insere('conteudo') no valor de inputs e selects
+$('option:checked').val()				//recupera valor de select escolhido
+
+$.each($('input:checked'),(indice, valor)=>{
+		console.log(indice, valor.value)
+	})						//para selecionar multiplos valores de inputs type='radio'

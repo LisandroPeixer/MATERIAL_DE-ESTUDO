@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Casting</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+
+		<script>
+			/*como o prompt recebe somente strings e preciso fazer o casting para number
+			caso queira somar os valores inseridos*/		  	
+		  	var variavel1 = prompt('Digite um valor: ')	
+		  	var variavel2 = prompt('Digite mais um valor: ')
+		  	document.write('concatenando variaveis strings <br/>')
+		  	document.write(variavel1 + variavel2)
+		  	document.write('<br/>')
+
+		  	//aqui a variavel faz a conversão pelo metodo parseInt() e a concatenação vira soma 
+		  	variavel1 = parseInt(variavel1)
+		  	variavel2 = parseInt(variavel2)
+		  	document.write('somando variaveis strings via casting <br/>')
+		  	document.write(variavel1 + variavel2)
+		  	document.write('<br/>')
+
+		  	//quando ocorre o inverso, um numero que precisa se concatenado com outra variavel
+		  	var variavel3 = 100
+		  	var variavel4 = 200
+		  	document.write('Somando variaveis numericas <br/>')
+		  	document.write(variavel3 + variavel4)
+		  	document.write('<br/>')
+
+		  	//use o metodo .toString() para converter numero para string
+		  	document.write('concatenando variaveis numericas via toString <br/>')
+		  	document.write(variavel3.toString() + variavel4.toString())		  	
+		</script>
+	</body>
+
+</html>
