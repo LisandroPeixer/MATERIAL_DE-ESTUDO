@@ -9,67 +9,60 @@ https://www.generatedata.com/ 		//gera banco de teste aleatorio
 ///////////////////////BANCO DE DADOS
 CREATE DATABASE nome_tb;               //cria banco de dados
 DROP DATABASE nome_db;                 //deleta banco de dados
-______________________________________________________________
 
 /////////////////////TABELAS
 CREATE TABLE nome_tb(		       	
  coluna 	tipo 		valor		chave(usado apenas no id para relacionamento), 
- id 		INT(10) 	NOT NULL 	PRIMARY KEY AUTO_INCREMENT,
- id_externa	INT(10) 	NOT NULL, 
- produto	VARCHAR(100) 	NOT NULL, 
- preço 		FLOAT(8,2) 	NOT NULL,
- FOREIGN KEY(id_externa) 		 REFERENCES tb_externa(id_externa),
- data_hora 	DATETIME 	NOT NULL DEFAULT CURRENT TIMESTAMP	
+ id 		INT(10) 	not null 	PRIMARY KEY AUTO_INCREMENT,
+ id_externa	INT(10) 	not null, 
+ produto	VARCHAR(100) 	not null, 
+ preço 		FLOAT(8,2) 	not null, 
+ data_hora 	DATETIME 	not null DEFAULT CURRENT_TIMESTAMP,
+ intervalo 	time 		not null,
+ FOREIGN KEY(id_externa) 	REFERENCES tb_externa(id_externa),	
 );      			       //cria tabela no banco de dados relacional
            
 DROP TABLE nome_tb;                    //deleta tabela no banco de dados	
 RENAME TABLE nome_tb TO nome_tb1;      //renomeia tabela
-__________________________________________________________________________
 
 /////////////////////////////////////////////////////COLUNAS 	
 ALTER TABLE nome_tb ADD COLUMN nome_coluna tipo valor;	        //adiciona coluna
 ALTER TABLE nome_tb CHANGE nome_coluna novo_nome tipo valor;	//muda coluna
 ALTER TABLE nome_tb DROP nome_coluna;				//deleta coluna
-_______________________________________________________________________________
 
 /////////////////////////////////////////////////////////////////////REGISTROS
 INSERT INTO nome_tb(nome_coluna1, nome_coluna2)values(campo1, campo2);	//adiciona campo no registro
 UPDATE nome_tb SET nome_coluna = 'campo' WHERE nome_registro = 'campo';	//modifica campo no registro 
 DELETE FROM 'nome_tb' WHERE ;						//apaga campo no registro (SIMULE ANTES)
 TRUNCATE nome_tb;		       					//apaga todos os registros
-_____________________________________________________________________________________________________
 	
 /////////////////////////////////CONSULTAS
-SELECT nome_coluna FROM 'nome_tb';				//seleciona coluna de tabelas
-SELECT * FROM 'nome_tb';					//seleciona todos os registros da tabela
-SELECT * FROM 'nome_tb'	WHERE nome_coluna = 'campo' AND/OR; 	//seleciona coluna de tabelas com filtro
-SELECT * FROM 'nome_tb'	WHERE nome_coluna BETWEEN 1 AND/OR 100;	//seleciona filtrando intervalos
-
-SELECT * FROM 'nome_tb'	WHERE nome_coluna BETWEEN 1 AND 100 ORDER BY nome_coluna ASC;
-								//seleciona filtrando intervalos em ordem
-
+SELECT nome_coluna FROM 'nome_tb';							//seleciona coluna de tabelas
+SELECT * FROM 'nome_tb';								//seleciona todos os registros da tabela
+SELECT * FROM 'nome_tb'	WHERE nome_coluna = 'campo' AND/OR; 				//seleciona coluna de tabelas com filtro
+SELECT * FROM 'nome_tb'	WHERE nome_coluna BETWEEN 1 AND/OR 100;				//seleciona filtrando intervalos
+SELECT * FROM 'nome_tb'	WHERE nome_coluna BETWEEN 1 AND 100 ORDER BY nome_coluna ASC;	//seleciona filtrando intervalos em ordem
 SELECT * FROM 'nome_tb'	WHERE nome_coluna IN/NOT IN ('campo1', 'campo2', 'campo3');	//agrupando filtros OR
-SELECT * FROM 'nome_tb'	WHERE nome_coluna LIKE %caracter% / _caracter_;			//caracteres do campo
-SELECT * FROM 'nome_tb'	LIMIT 10;		//limita retornos da consulta
-SELECT * FROM 'nome_tb'	LIMIT 10 OFFSET 5;	//apartir do 4º registro
-SELECT * FROM 'nome_tb'	LIMIT 5, 10;		//apartir do 4º registro limita retornos da consulta em 10
-SELECT * FROM 'nome_tb' GROUP BY nome_coluna;		//mostra 1°registro de valores agrupados
-SELECT *,count(*) FROM 'nome_tb' GROUP BY nome_coluna;	//mostra quantidade de registros por campo
-SELECT nome_coluna,count(*) AS apelido FROM 'nome_tb' GROUP BY nome_coluna;	//isola coluna dando apelido 
+SELECT * FROM 'nome_tb'	WHERE nome_coluna LIKE %caracter% / _caracter_;			//caracteres do campo(partes da palavra)
+SELECT * FROM 'nome_tb'	LIMIT 10;							//limita retornos da consulta
+SELECT * FROM 'nome_tb'	LIMIT 10 OFFSET 5;						//apartir do 4º registro
+SELECT * FROM 'nome_tb'	LIMIT 5, 10;							//apartir do 4º registro limita retornos da consulta em 10
+SELECT * FROM 'nome_tb' GROUP BY nome_coluna;						//mostra 1°registro de valores agrupados
+SELECT *,count(*) FROM 'nome_tb' GROUP BY nome_coluna;					//mostra quantidade de registros por campo
+SELECT nome_coluna,count(*) AS apelido FROM 'nome_tb' GROUP BY nome_coluna;		//isola coluna dando apelido 
 
 SELECT nome_coluna,count(*) AS apelido FROM 'nome_tb' GROUP BY nome_coluna HAVING apelido >= 5;
-							//isola coluna dando apelido com filtro	comparativo
+											//isola coluna dando apelido com filtro	comparativo
 
 SELECT nome_coluna,count(*) AS apelido FROM 'nome_tb' GROUP BY nome_coluna HAVING nome_coluna IN('campo1', 'campo2');
-							//isola coluna com filtro definido	
-
+											//isola coluna com filtro definido
+	
 SELECT nome_coluna,count(*) AS apelido FROM 'nome_tb' GROUP BY nome_coluna HAVING apelido >= 5 AND nome_coluna IN('campo1', 'campo2');
-							//isola coluna dando apelido com filtro definido e comparativo
+											//isola coluna dando apelido com filtro definido e comparativo
 
-SELECT MIN(nome_coluna) FROM 'nome_tb'; 	//seleciona menor valor MIN, maior valor MAX, calcula media AVG 
-SELECT SUM(nome_coluna) FROM 'nome_tb'; 	//calcula soma SUM, media AVG, 
-SELECT COUNT(*) FROM 'nome_tb';			//conta a quantidade de registros da tabela 
-_________________________________________________________________________________________________
+SELECT MIN(nome_coluna) FROM 'nome_tb'; 						//seleciona menor valor MIN, maior valor MAX, calcula media AVG 
+SELECT SUM(nome_coluna) FROM 'nome_tb'; 						//calcula soma SUM, media AVG, 
+SELECT COUNT(*) FROM 'nome_tb';								//conta a quantidade de registros da tabela 
 
 //////////////////////////////////////////////////////////////////////////JUNCÕES DE TABELAS
 SELECT * FROM nome_tb1 LEFT JOIN nome_tb2 ON (nome_tb1.id1 = nome_tb2.id1);	//juntando tabela1 a esquerda para consulta relacional
